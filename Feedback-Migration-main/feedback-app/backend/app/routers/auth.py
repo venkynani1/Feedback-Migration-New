@@ -1,6 +1,8 @@
 from __future__ import annotations
 
 import logging
+import threading
+import time
 
 from fastapi import APIRouter, Depends, Request
 from pydantic import BaseModel
@@ -11,6 +13,43 @@ from ..deps import User, UserError, current_user
 
 log = logging.getLogger(__name__)
 router = APIRouter(prefix="/api/auth", tags=["auth"])
+
+
+# Failed sign-ins per user id, as times. Held in memory, so it is per process
+# and forgotten on restart; it slows password guessing, StationH still decides.
+_failures: dict[str, list[float]] = {}
+_failures_lock = threading.Lock()
+
+
+def _recent_failures(username: str, now: float) -> list[float]:
+    window = get_settings().login_lockout_minutes * 60
+    recent = [t for t in _failures.get(username, []) if now - t < window]
+    if recent:
+        _failures[username] = recent
+    else:
+        _failures.pop(username, None)
+    return recent
+
+
+def _check_not_locked(username: str) -> None:
+    settings = get_settings()
+    with _failures_lock:
+        recent = _recent_failures(username, time.monotonic())
+    if len(recent) >= settings.login_max_failures:
+        log.warning("Sign-in for %s refused: too many failed attempts", username)
+        raise UserError(
+            f"Too many failed sign-in attempts. Please try again in {settings.login_lockout_minutes} minutes.",
+            429,
+        )
+
+
+def _record_failure(username: str) -> None:
+    now = time.monotonic()
+    with _failures_lock:
+        if len(_failures) > 10_000:  # do not let made-up user ids pile up
+            for name in list(_failures):
+                _recent_failures(name, now)
+        _failures[username] = _recent_failures(username, now) + [now]
 
 
 class LoginIn(BaseModel):
@@ -49,13 +88,19 @@ def login(body: LoginIn, request: Request) -> dict:
     if not body.password:
         raise UserError("Password is required.")
 
+    key = username.lower()
+    _check_not_locked(key)
     try:
         valid = soap_auth.is_valid_user(username, body.password)
     except soap_auth.AuthServiceError:
         log.exception("StationH authentication failed for %s", username)
         raise UserError("The authentication service is unavailable. Please try again later.", 503)
     if not valid:
+        _record_failure(key)
+        log.info("Failed sign-in for %s", username)
         raise UserError("Your login attempt was not successful. Please try again.", 401)
+    with _failures_lock:
+        _failures.pop(key, None)
 
     # StationH logins use the long id; the feedback tables use the 5 digit id.
     ids = db.call_proc("usp_GetFiveDigitEmpID", {"empid": username}).first

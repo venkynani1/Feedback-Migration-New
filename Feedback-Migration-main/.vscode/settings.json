@@ -1,5 +1,7 @@
 {
     "git.ignoreLimitWarning": true,
     "dotnet.preferCSharpExtension": true,
-    "dotnet.defaultSolution": "Development/FS-ISGCR-00875/HexFeedback/HexFeedback.sln"
+    "dotnet.defaultSolution": "Development/FS-ISGCR-00875/HexFeedback/HexFeedback.sln",
+    "python.defaultInterpreterPath": "${workspaceFolder}/feedback-app/backend/.venv/Scripts/python.exe",
+    "python.analysis.extraPaths": ["feedback-app/backend"]
 }

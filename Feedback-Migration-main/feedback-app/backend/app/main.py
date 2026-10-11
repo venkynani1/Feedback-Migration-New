@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import logging
+from logging.handlers import RotatingFileHandler
 
 from fastapi import FastAPI, Request
 from fastapi.responses import FileResponse, JSONResponse
@@ -28,11 +29,37 @@ PAGE_CSP = (
 API_CSP = "default-src 'none'; frame-ancestors 'none'"
 
 
+def _log_to_file(path: str) -> None:
+    root = logging.getLogger()
+    if any(isinstance(h, RotatingFileHandler) for h in root.handlers):
+        return
+    handler = RotatingFileHandler(path, maxBytes=5_000_000, backupCount=10, encoding="utf-8")
+    handler.setFormatter(logging.Formatter("%(asctime)s %(levelname)s %(name)s: %(message)s"))
+    root.addHandler(handler)
+    if root.level > logging.INFO or root.level == logging.NOTSET:
+        root.setLevel(logging.INFO)
+
+
 def create_app() -> FastAPI:
     settings = get_settings()
+    production = settings.environment == "production"
+    if production and settings.production_problems():
+        raise RuntimeError(
+            "Refusing to start in production: "
+            + "; ".join(settings.production_problems())
+            + ". Fix the settings, or set FEEDBACK_ENVIRONMENT=development on a developer machine."
+        )
+    if settings.log_file:
+        _log_to_file(settings.log_file)
     if settings.demo_mode:
         log.warning("FEEDBACK_DEMO_MODE is on: using sample data and demo logins, not the real database")
-    app = FastAPI(title="Training Feedback", docs_url="/api/docs", openapi_url="/api/openapi.json")
+    # The interactive API pages describe every endpoint; keep them to developer machines.
+    app = FastAPI(
+        title="Training Feedback",
+        docs_url=None if production else "/api/docs",
+        redoc_url=None,
+        openapi_url=None if production else "/api/openapi.json",
+    )
 
     @app.middleware("http")
     async def require_ajax_header(request: Request, call_next):
@@ -72,6 +99,11 @@ def create_app() -> FastAPI:
             {"detail": "An unexpected error occured. Please contact system administrator."},
             status_code=500,
         )
+
+    @app.get("/api/health", include_in_schema=False)
+    def health() -> dict:
+        """For the proxy or a monitor: answers when the application is up."""
+        return {"status": "ok"}
 
     for module in (auth, lookups, masters, sessions, nominations, feedback, reports, skillport):
         app.include_router(module.router)

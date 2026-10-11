@@ -20,7 +20,7 @@ authentication service.
 ## Requirements
 
 - Python 3.12 or later
-- Node.js 20 or later (only to build the front end)
+- Node.js 22.12 or later (only to build the front end)
 - Microsoft ODBC Driver 18 for SQL Server on the machine running the back end
 - Network access to the `TrainingFeedback` database, the StationH
   authentication service and the upload share
@@ -37,6 +37,12 @@ that SQL Server can open, and the account running the back end needs write
 access to it. The default is the share the old application wrote to. Files are
 saved there as `TrainingFeedback_<employee>_<time>_<name>.xls` and deleted once
 imported.
+
+`FEEDBACK_ENVIRONMENT` defaults to `production`. In production the application
+refuses to start if demo mode or the password-less dev sign-in is on, the
+cookie is not marked secure, the secret key is shorter than 32 characters or
+the database connection is empty, and the interactive API pages (`/api/docs`)
+are switched off. Set it to `development` on your own machine.
 
 ### Demo mode
 
@@ -63,7 +69,8 @@ npm run dev
 ```
 
 Open http://localhost:5173. The dev server forwards `/api` to port 8000. For
-local work over plain http set `FEEDBACK_COOKIE_SECURE=false`.
+local work over plain http set `FEEDBACK_ENVIRONMENT=development` and
+`FEEDBACK_COOKIE_SECURE=false`.
 
 ## Deploy
 
@@ -88,8 +95,12 @@ that has the same database rights as the old IIS application pool.
 
 ### Before going live
 
-- `FEEDBACK_DEMO_MODE=false`, `FEEDBACK_AUTH_MODE=soap`,
-  `FEEDBACK_COOKIE_SECURE=true`, and a fresh `FEEDBACK_SECRET_KEY`.
+- `FEEDBACK_ENVIRONMENT=production` with a fresh `FEEDBACK_SECRET_KEY`; the
+  application then checks the other safety settings itself at start-up.
+- Set `FEEDBACK_LOG_FILE` so errors are kept once it runs as a service, and
+  point the proxy's health check at `/api/health`.
+- Run a single worker process, or accept that the failed sign-in lock
+  (5 attempts, then 15 minutes) is counted per process.
 - Check on the production database that these procedures exist. The
   application calls them, as the old one did, but this repository has no
   script for them: `usp_GetFiveDigitEmpID`, `usp_Insertfeedbacks_V1`,
@@ -168,6 +179,7 @@ membership database that was never configured).
   the page instead of browser pop-ups, and the menu is a side bar.
 - **Responses carry security headers** (content security policy, no framing,
   no caching of API data).
+- **A user id is locked for 15 minutes after 5 failed sign-ins.**
 - **Create/Remove Admin was never implemented** in the old site (the Add button
   did nothing); only the employee search is carried over. Admins are still
   added in the database.

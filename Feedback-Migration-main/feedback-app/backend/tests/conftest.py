@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import os
 
+os.environ["FEEDBACK_ENVIRONMENT"] = "development"
 os.environ["FEEDBACK_SECRET_KEY"] = "test-secret-key"
 os.environ["FEEDBACK_AUTH_MODE"] = "dev"
 os.environ["FEEDBACK_COOKIE_SECURE"] = "false"

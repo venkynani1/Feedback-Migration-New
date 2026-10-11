@@ -1,0 +1,13 @@
+E:\TrainingFedback\HexFBDALFactory\bin\Release\HexFBDALFactory.dll
+E:\TrainingFedback\HexFBDALFactory\bin\Release\HexFBDALFactory.pdb
+E:\TrainingFedback\HexFBDALFactory\bin\Release\HexFBDAL.dll
+E:\TrainingFedback\HexFBDALFactory\bin\Release\HexFBIDAL.dll
+E:\TrainingFedback\HexFBDALFactory\bin\Release\HexFBModule.dll
+E:\TrainingFedback\HexFBDALFactory\bin\Release\HexFBDBUtility.dll
+E:\TrainingFedback\HexFBDALFactory\bin\Release\HexFBDAL.pdb
+E:\TrainingFedback\HexFBDALFactory\bin\Release\HexFBIDAL.pdb
+E:\TrainingFedback\HexFBDALFactory\bin\Release\HexFBModule.pdb
+E:\TrainingFedback\HexFBDALFactory\bin\Release\HexFBDBUtility.pdb
+E:\TrainingFedback\HexFBDALFactory\obj\Release\HexFBDALFactory.csprojResolveAssemblyReference.cache
+E:\TrainingFedback\HexFBDALFactory\obj\Release\HexFBDALFactory.dll
+E:\TrainingFedback\HexFBDALFactory\obj\Release\HexFBDALFactory.pdb

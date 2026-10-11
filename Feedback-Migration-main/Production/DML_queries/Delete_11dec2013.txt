@@ -1,0 +1,8 @@
+select * from Feedback WHERE session_id in ('OR_11/26/2013To11/27/2013','T1_11/28/2013To11/29/2013')
+delete from Feedback WHERE session_id in ('OR_11/26/2013To11/27/2013','T1_11/28/2013To11/29/2013')
+
+select * from Nomination_List WHERE session_id in ('OR_11/26/2013To11/27/2013','T1_11/28/2013To11/29/2013')
+delete from Nomination_List WHERE session_id in ('OR_11/26/2013To11/27/2013','T1_11/28/2013To11/29/2013')
+
+SELECT * FROM C_Session WHERE sessionid in ('OR_11/26/2013To11/27/2013','T1_11/28/2013To11/29/2013')
+delete from C_Session WHERE sessionid in ('OR_11/26/2013To11/27/2013','T1_11/28/2013To11/29/2013')

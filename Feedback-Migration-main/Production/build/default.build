@@ -1,0 +1,20 @@
+<project name="Solution Build Example" default="rebuild">
+    <property name="configuration" value="release"/>
+    
+    <target name="clean" description="Delete all previously compiled binaries.">
+        <delete dir="../PreCompiled" />
+    </target>
+    
+    <target name="build" description="Build all targets.">
+        <call target="build.website"/>
+    </target>
+    
+    <target name="rebuild" depends="clean, build" />
+
+    
+    <target name="build.website" description="Compiles a Web Deployment Project using MSBuild">
+		<msbuild project="msbuild.xml" verbosity="Detailed" >
+		
+		</msbuild>
+	</target>
+</project>

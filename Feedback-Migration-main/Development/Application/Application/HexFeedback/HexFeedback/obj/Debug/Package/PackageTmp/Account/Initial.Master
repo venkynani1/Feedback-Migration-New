@@ -1,0 +1,106 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Initial.master.cs" Inherits="HexFeedback.Account.Initial" %>
+
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <title>Feed Back Tool</title>
+    <link href="Styles/Site.css" rel="stylesheet" type="text/css" />
+  
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        body
+        {
+            margin-left: 0px;
+            margin-top: 0px;
+            margin-right: 0px;
+            margin-bottom: 0px;
+            
+        }
+            </style>
+            
+
+
+</head>
+<body>
+    <form id="form1" runat="server">
+    <asp:ToolkitScriptManager ID="ScriptManager1" runat="server">
+    </asp:ToolkitScriptManager>
+    <div class="page">
+        <div class="header">
+            <table cellspacing="0" cellpadding="0" width="99.5%" align="center" border="1">
+                <tr>
+                    <td>
+                        <table cellspacing="0" cellpadding="0" width="100%" align="center" border="0">
+                            <tr>
+                                <td width="100%" background="Images/ban_center.jpg">
+                                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                        <tr>
+                                            <td width="50%" align="left" valign="top">
+                                                <img src="Images/ban_left.jpg" width="318px" height="103" />
+                                            </td>
+                                            <td width="50%" align="right" valign="top">
+                                                <img height="103px" width="466px" src="Images/Ban_right.jpg" />
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="main">
+            <table bordercolor="#999999" cellspacing="0" cellpadding="0" width="99.5%" align="center"
+                bgcolor="white" border="1" style="vertical-align: top;">
+                <tr>
+                    <td>
+                        <asp:ModalPopupExtender ID="mdlPopup" runat="server" TargetControlID="pnlPopup" PopupControlID="pnlPopup"
+                            BackgroundCssClass="modalBackground" RepositionMode="RepositionOnWindowResize" />
+                        <asp:Panel ID="pnlPopup" runat="server"  CssClass="updateProgress"  Style="display: none; width: 90px; height: 90px">
+                            <div align="center" style="height: 90px; background-color: Black; width: 90px">
+                                <asp:Image ID="ImgLoading" runat="server" BackColor="Black" Height="90px" Width="90px"
+                                    ImageAlign="Middle" ImageUrl="~/Account/Images/loading11.gif" />
+                            </div>
+                        </asp:Panel>
+                        <asp:ContentPlaceHolder ID="MainContent" runat="server" />
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="clear">
+        </div>
+        <table cellspacing="0" cellpadding="0" width="99.5%" align="center" bgcolor="gray"
+            border="1">
+            <tr>
+                <td style="font-family: Verdana, sans-serif; font-size: 11px; color: #ffffff; font-style: normal;
+                    font-weight: bold; background-color: #1a3c6a; height: 17px; text-align: center;
+                    vertical-align: middle;">
+                    © Copyright 2012, Hexaware Technologies Ltd. All rights reserved.
+                </td>
+            </tr>
+        </table>
+    </div>
+    <script type="text/javascript" language="javascript">
+        Sys.Net.WebRequestManager.add_invokingRequest(On_InvokeRequest);
+        Sys.Net.WebRequestManager.add_completedRequest(On_CompleteRequest);
+
+        function On_InvokeRequest(sender, args) {
+            // show the popup
+            document.getElementById("<%=pnlPopup.ClientID %>").style.display = 'block';
+            var cmb = $find('<%=mdlPopup.ClientID %>');
+            cmb.show();
+        }
+
+        function On_CompleteRequest(sender, args) {
+            //  hide the popup
+            document.getElementById("<%=pnlPopup.ClientID %>").style.display = 'none';
+            $find('<%=mdlPopup.ClientID %>').hide();
+        }
+    </script>
+    </form>
+</body>
+</html>

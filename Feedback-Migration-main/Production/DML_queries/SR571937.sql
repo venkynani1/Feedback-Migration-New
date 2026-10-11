@@ -1,0 +1,1 @@
+insert into HelixMaster.dbo.m_master values ('DA','HV','Transavia Airline',1,'36135',GETDATE())

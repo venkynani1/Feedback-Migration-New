@@ -1,0 +1,1 @@
+Update M_EMPLOYEE set  S_EMPLOYEE_STATUS_ID = 'A'     Where S_EMPLOYEE_ID ='35521'

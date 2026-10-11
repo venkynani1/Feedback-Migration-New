@@ -1,0 +1,10 @@
+USE TrainingFeedback
+
+SELECT * FROM Master_Supervisor_List WHERE S_EMPLOYEE_ID='32662'
+SELECT * FROM Master_Supervisor_List WHERE S_EMPLOYEE_ID in ('32531','32561','32570','32662','32455','32499','32513','32497','32511','32548','32517','32464','32480','32502','32578','32437','32438','32442','32443')
+order by S_SUPERVISOR_ID
+SELECT * FROM Master_Supervisor_List WHERE S_EMPLOYEE_ID in ('32441','32505','32512')
+order by S_SUPERVISOR_ID
+select * from Supervisor_List where Employee_id in ('33423')
+
+UPDATE Master_Supervisor_List SET S_SUPERVISOR_ID='33423' WHERE SESSION_ID='Che_FTP_001_7/1/2015To12/31/2015' AND S_EMPLOYEE_ID in ('32662')

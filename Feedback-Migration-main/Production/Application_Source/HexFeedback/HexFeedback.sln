@@ -1,0 +1,58 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HexFeedback", "HexFeedback\HexFeedback.csproj", "{B588CE57-FCDF-4193-AF80-A110511C4E94}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HexFBBLL", "..\HexFBBLL\HexFBBLL.csproj", "{9DAADF74-9B72-47D0-8C67-676B07C59003}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HexFBDAL", "..\HexFBDAL\HexFBDAL.csproj", "{9C6C7F98-4F1C-49EA-AC40-65D91F95C19A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HexFBDALFactory", "..\HexFBDALFactory\HexFBDALFactory.csproj", "{D2372355-480E-4A20-AF4A-13B0CB93D885}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HexFBDBUtility", "..\HexFBDBUtility\HexFBDBUtility.csproj", "{95C8B8E9-7F1D-4A5C-8841-1216ACB56D4C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HexFBModule", "..\HexFBModule\HexFBModule.csproj", "{098654AF-7C8F-4B84-89DF-ACDFD2D77084}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HexFBIDAL", "..\HexFBIDAL\HexFBIDAL.csproj", "{551AC73A-10FD-428A-ADEC-D1B2D44189F5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B588CE57-FCDF-4193-AF80-A110511C4E94}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B588CE57-FCDF-4193-AF80-A110511C4E94}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B588CE57-FCDF-4193-AF80-A110511C4E94}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B588CE57-FCDF-4193-AF80-A110511C4E94}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9DAADF74-9B72-47D0-8C67-676B07C59003}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9DAADF74-9B72-47D0-8C67-676B07C59003}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9DAADF74-9B72-47D0-8C67-676B07C59003}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9DAADF74-9B72-47D0-8C67-676B07C59003}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9C6C7F98-4F1C-49EA-AC40-65D91F95C19A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9C6C7F98-4F1C-49EA-AC40-65D91F95C19A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9C6C7F98-4F1C-49EA-AC40-65D91F95C19A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9C6C7F98-4F1C-49EA-AC40-65D91F95C19A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D2372355-480E-4A20-AF4A-13B0CB93D885}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D2372355-480E-4A20-AF4A-13B0CB93D885}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D2372355-480E-4A20-AF4A-13B0CB93D885}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D2372355-480E-4A20-AF4A-13B0CB93D885}.Release|Any CPU.Build.0 = Release|Any CPU
+		{95C8B8E9-7F1D-4A5C-8841-1216ACB56D4C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{95C8B8E9-7F1D-4A5C-8841-1216ACB56D4C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{95C8B8E9-7F1D-4A5C-8841-1216ACB56D4C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{95C8B8E9-7F1D-4A5C-8841-1216ACB56D4C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{098654AF-7C8F-4B84-89DF-ACDFD2D77084}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{098654AF-7C8F-4B84-89DF-ACDFD2D77084}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{098654AF-7C8F-4B84-89DF-ACDFD2D77084}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{098654AF-7C8F-4B84-89DF-ACDFD2D77084}.Release|Any CPU.Build.0 = Release|Any CPU
+		{551AC73A-10FD-428A-ADEC-D1B2D44189F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{551AC73A-10FD-428A-ADEC-D1B2D44189F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{551AC73A-10FD-428A-ADEC-D1B2D44189F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{551AC73A-10FD-428A-ADEC-D1B2D44189F5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

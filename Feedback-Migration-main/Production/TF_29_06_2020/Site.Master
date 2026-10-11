@@ -1,0 +1,194 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="HexFeedback.SiteMaster" %>
+
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head id="Head1" runat="server">
+    <title>Page Master</title>
+    <link href="~/Styles/Site.css" rel="stylesheet" type="text/css" />
+    <link href="Styles/NewStyles.css" rel="stylesheet" type="text/css" />
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+    </asp:ContentPlaceHolder>
+    <script type="text/javascript">
+        function doRedirect() {
+            window.location.href = window.location.href;
+        }
+    </script>
+    <style type="text/css">
+        .style1
+        {
+            width: 42%;
+            height: 42px;
+        }
+        .style3
+        {
+            width: 5%;
+            height: 42px;
+        }
+    </style>
+</head>
+<body>
+    <form id="Form1" runat="server">
+   <asp:ToolkitScriptManager ID="ScriptManager1" runat="server">
+    </asp:ToolkitScriptManager>
+    <div class="page">
+        <div class="header">
+            <table cellspacing="0" cellpadding="0" width="100%" align="center" border="1">
+                <tr>
+                    <td>
+                        <table cellspacing="0" cellpadding="0" width="100%" align="center" border="0">
+                            <tr>
+                                <td width="100%" background="Images/ban_center.jpg">
+                                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                        <tr>
+                                            <td width="50%" align="left" valign="top">
+                                                <img src="Images/ban_left.jpg" width="318px" height="103" />
+                                            </td>
+                                            <td width="50%" align="right" valign="top">
+                                                <img height="103px" width="466px" src="Images/Ban_right.jpg" />
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div>
+        <table style="width: 100%">
+            <tr>
+                <td class="style1">
+                    <asp:Menu ID="AdminMenu" runat="server" Orientation="Horizontal" BackColor="#faf8f8"
+                        DynamicHorizontalOffset="2" Font-Names="Verdana" Font-Size="13px" ForeColor="#0683FF"
+                        StaticDisplayLevels="1" StaticSubMenuIndent="10px">
+                        <StaticMenuItemStyle HorizontalPadding="5px" VerticalPadding="5px" />
+                        <DynamicHoverStyle BackColor="#DFE6F0" ForeColor="White" />
+                        <DynamicMenuStyle BackColor="#faf8f8" />
+                        <StaticSelectedStyle BackColor="#A6E9FF" />
+                        <DynamicSelectedStyle BackColor="#8CD1FF" />
+                        <DynamicMenuItemStyle HorizontalPadding="5px" VerticalPadding="5px" />
+                        <StaticHoverStyle BackColor="#DFE6F0" ForeColor="White" />
+                        <Items>
+                            <asp:MenuItem NavigateUrl="~/Home.aspx" Text="HOME" Value="HOME" ToolTip="Home">
+                            </asp:MenuItem>
+                            <asp:MenuItem Text="Masters" Value="Masters" ToolTip="All Master ">
+                                <asp:MenuItem NavigateUrl="~/MasterMail.aspx" Text="Mail Master" Value="Mail Master"
+                                    ToolTip="Mail Master"></asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="~/MasterVendor.aspx" Text="Vendor Master" Value="Vendor Master"
+                                    ToolTip="Vendor Master"></asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="~/MasterTrainer.aspx" Text="Trainer Master" Value="Trainer Master"
+                                    ToolTip="Trainer Master"></asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="~/Course.aspx" Text="Course Master" ToolTip="Course Master"
+                                    Value="Course Master"></asp:MenuItem>
+                            </asp:MenuItem>
+                            <asp:MenuItem Text="Session" Value="Session" ToolTip="New Session And Upload Nomination List">
+                                <asp:MenuItem NavigateUrl="~/Session.aspx" Text="Create New Session" Value="Session Creation"
+                                    ToolTip="New Session Creation"></asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="~/NominationList.aspx" Text="Upload Participant List"
+                                    Value="Upload Participant List" ToolTip="Upload Participant List And Send Mail">
+                                </asp:MenuItem>
+                            </asp:MenuItem>
+                            <asp:MenuItem Text="Reports" Value="Reports" ToolTip="All Type Of Reports">
+                                <asp:MenuItem NavigateUrl="~/BalFeedback.aspx" Text="View Comments" Value="View Comments"
+                                    ToolTip="View Comments and approve the commands"></asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="~/FeedbackDef.aspx" Text="Feedback Defaulters" Value="Feedback Defaulters"
+                                    ToolTip="Feedback Defaulters"></asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="~/IdividualRep.aspx" Text="Overall Reports" Value="Overall Reports"
+                                    ToolTip="Overall Reports"></asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="~/IndividAnalysis.aspx" Text="Individual Reports" Value="Individual Reports"
+                                    ToolTip="Individual Reports"></asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="~/TrainingEffectivenessReport.aspx" Text="Training Effectiveness Report" Value="Training Effectiveness Report"
+                                    ToolTip="Individual Reports"></asp:MenuItem>
+                            </asp:MenuItem>
+                            <asp:MenuItem Text="FeedBack" Value="FeedBack" ToolTip="FeedBack">
+                                <asp:MenuItem NavigateUrl="~/TrainingList.aspx?IsAdmin=1" Text="Record My Feedback"
+                                    Value="Record My Feedback" ToolTip="Record My Feedback"></asp:MenuItem>
+                            </asp:MenuItem>
+                            <asp:MenuItem Text="ExcelUpload" Value="ExcelUpload">
+                                <asp:MenuItem NavigateUrl="~/SkillPort/SkillPortUpload.aspx" 
+                                    Text="Excel Data Upload" Value="Excel Data Upload">
+                                    </asp:MenuItem>
+                            </asp:MenuItem>
+                        </Items>
+                    </asp:Menu>
+                </td>
+                <td style="font-family: Verdana; text-align: right;">
+                    <asp:Image ID="Image1" ImageUrl="~/Images/icon_men.gif" runat="server" />
+                </td>
+                <td style="font-family: Verdana; text-align: left;"> 
+                <div style="float:left;">
+                    <asp:Label ID="lblWelcomeMsg" runat="server" ForeColor="#004FC4"></asp:Label>
+                </div>
+                <div style="float:right; padding-right:30px; padding-left:10px;" ID="year2" runat="server">
+                    <asp:DropDownList ID="ddlYear" runat="server" 
+                        onselectedindexchanged="ddlYear_SelectedIndexChanged" AutoPostBack="True" ></asp:DropDownList>
+                </div>
+                <div style="float:right; padding-top:3px;" ID="year1" runat="server">
+                Year:
+                </div>
+                </td>
+                <td align="left" class="style3">
+                    <asp:LoginStatus ID="LoginStatus1" runat="server" OnLoggedOut="LoginStatus1_LoggedOut"
+                        OnLoggingOut="LoginStatus1_LoggingOut" Font-Names="Verdana" />
+                </td>
+            </tr>
+            <tr>
+                <td style="width: 100%; text-align: center; border-right: 0px dashed #FFFFFF; padding: 5px 0 1px 0;
+                    background-image: url(Images/Borderimage2.png); background-position: bottom;
+                    background-repeat: repeat-x;" colspan="5">
+                </td>
+            </tr>
+        </table>
+   
+        </div>
+        <div class="main">
+          <asp:ModalPopupExtender id="mdlPopup" runat="server" targetcontrolid="pnlPopup"
+                    popupcontrolid="pnlPopup" backgroundcssclass="modalBackground" repositionmode="RepositionOnWindowResize" />
+                <asp:Panel ID="pnlPopup" runat="server" CssClass="updateProgress" Style="display: none;
+                    width: 90px; height: 90px">
+                    <div align="center" style="height: 90px; background-color: Black; width: 90px">
+                        <asp:Image ID="ImgLoading" runat="server" BackColor="Black" Height="90px" Width="90px"
+                            ImageAlign="Middle" ImageUrl="~/Images/loading11.gif"/>
+                    </div>
+                 </asp:Panel>
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+            </asp:ContentPlaceHolder>
+           
+        </div>
+        <div class="clear">
+        </div>
+        <div>
+            <table cellpadding="0" cellspacing="3" width="100%">
+                <tr class="footerNew">
+                    <td>
+                        © Copyright 2012, Hexaware Technologies Ltd. All rights reserved.
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+     <script type="text/javascript" language="javascript">
+         Sys.WebForms.PageRequestManager.getInstance().add_beginRequest(beginRequest);
+         Sys.WebForms.PageRequestManager.getInstance().add_endRequest(endRequest);
+
+         function beginRequest(sender, args) {
+             // show the popup
+             document.getElementById("<%=pnlPopup.ClientID %>").style.display = 'block';
+             var cmb = $find('<%=mdlPopup.ClientID %>');
+             cmb.show();
+             
+         }
+
+         function endRequest(sender, args) {
+             //  hide the popup
+             document.getElementById("<%=pnlPopup.ClientID %>").style.display = 'none';
+             $find('<%=mdlPopup.ClientID %>').hide();
+         }
+        
+    </script>
+    </form>
+</body>
+</html>

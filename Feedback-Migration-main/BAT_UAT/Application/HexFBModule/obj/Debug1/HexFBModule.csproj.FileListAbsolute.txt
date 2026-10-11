@@ -1,0 +1,10 @@
+E:\HexFeedBack\HexFBModule\bin\Debug\HexFBModule.dll
+E:\HexFeedBack\HexFBModule\bin\Debug\HexFBModule.pdb
+E:\HexFeedBack\HexFBModule\obj\Debug\ResolveAssemblyReference.cache
+E:\HexFeedBack\HexFBModule\obj\Debug\HexFBModule.dll
+E:\HexFeedBack\HexFBModule\obj\Debug\HexFBModule.pdb
+D:\HexFeedBack\HexFBModule\bin\Debug\HexFBModule.dll
+D:\HexFeedBack\HexFBModule\bin\Debug\HexFBModule.pdb
+D:\HexFeedBack\HexFBModule\obj\Debug\ResolveAssemblyReference.cache
+D:\HexFeedBack\HexFBModule\obj\Debug\HexFBModule.dll
+D:\HexFeedBack\HexFBModule\obj\Debug\HexFBModule.pdb

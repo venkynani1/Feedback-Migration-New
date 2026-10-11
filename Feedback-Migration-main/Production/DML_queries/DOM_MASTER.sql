@@ -1,0 +1,1 @@
+Insert into  m_master Values ('C','DOM','Dominican Republic','1','36135',GETDATE())

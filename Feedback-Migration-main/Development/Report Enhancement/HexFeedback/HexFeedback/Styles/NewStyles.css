@@ -1,0 +1,332 @@
+﻿table.Feedback
+{
+    border-width: 1px;
+    border-style: inset;
+    border-color: #006BD7;
+    border-collapse: collapse;
+    background-color: White;
+    font-family: Verdana;
+}
+table.Feedback th
+{
+    border-width: 1px;
+    padding: 1px;
+    border-style: inset;
+    border-color: #006BD7;
+    background-color: White;
+}
+table.Feedback td
+{
+    border-width: 1px;
+    padding: 1px;
+    border-style: inset;
+    border-color: #006BD7;
+    background-color: White;
+}
+
+
+table.FeedbackWithoutBorder
+{
+    border-width: 0px;
+    border-style: inset;
+    border-color: #006BD7;
+    border-collapse: collapse;
+    background-color: White;
+    font-family: Verdana;
+}
+table.FeedbackWithoutBorder th
+{
+    border-width: 0px;
+    padding: 1px;
+    border-style: inset;
+    border-color: #006BD7;
+    background-color: White;
+}
+table.FeedbackWithoutBorder td
+{
+    border-width: 0px;
+    padding: 1px;
+    border-style: inset;
+    border-color: #006BD7;
+    background-color: White;
+}
+
+/*Style for head row*/
+.hdrow
+{
+    font-family: Verdana, sans-serif;
+    font-size: 11px;
+    color: #ffffff;
+    font-style: normal;
+    font-weight: bold;
+    background-color: #1a3c6a;
+    height: 17px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+/*Style for odd row*/
+.oddrow
+{
+    font-family: Verdana, sans-serif;
+    font-size: 12px;
+    color: #006BD7;
+    font-style: normal;
+    background-color: #faf8f8;
+    height: 17px;
+    text-align: left;
+    font-weight: normal;
+}
+
+/*Style for Even row*/
+.evenrow
+{
+    font-family: Verdana, sans-serif;
+    font-size: 12px;
+    color: #006BD7;
+    font-style: normal;
+    background-color: #dfe6f0;
+    height: 17px;
+    text-align: left;
+    font-weight: normal;
+}
+
+.button1
+{
+    background: #0054D2;
+    border: solid 1px grey;
+    font-family: Verdana, sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    color: white;
+    height: 20px;
+}
+
+.button1:hover
+{
+    background: black;
+    border: solid 1px grey;
+    font-family: Verdana, sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    color: white;
+    height: 20px;
+}
+
+
+.button
+{
+    font-family: Verdana,sans-serif;
+    border: 1px solid #8eb8ee;
+    width: 100px;
+    height: 18px;
+    background-color: #b4b4b4;
+    font-size: 11px;
+    color: #001c40;
+    font-weight: bold;
+    text-align: center;
+    background-image: url(../Images/butbg.gif);
+    cursor: hand;
+}
+
+
+
+.labelHeader
+{
+    font-family: Verdana, sans-serif;
+    font-size: 13px;
+    color: #006BD7;
+    font-weight: bold;
+}
+
+.label
+{
+    /*background: #E6FAFF;*/
+    font-family: Verdana, sans-serif;
+    font-size: 12px;
+    color: #333333;
+    font-weight: normal;
+}
+.labelErrMsg
+{
+    font-family: Verdana, sans-serif;
+    font-size: 12px;
+    color: #BF0000;
+    font-weight: bold;
+    text-align: center;
+}
+
+
+.textboxNew
+{
+    background-image: url(Images/form_bg.jpg);
+    background-repeat: repeat-x;
+    border: 1px solid #d1c7ac;
+    width: 230px;
+    color: #333333;
+    padding: 3px;
+    margin-right: 4px;
+    margin-bottom: 0px;
+    font-family: Verdana,sans-serif;
+    height: 17px;
+    font-size: 12px;
+}
+
+.DropDownListNew
+{
+    background-image: url(Images/form_bg.jpg);
+    background-repeat: repeat-x;
+    border: 1px solid #d1c7ac;
+    width: 240px;
+    color: #333333;
+    padding: 1px;
+    margin-right: 4px;
+    margin-bottom: 0px;
+    font-family: Verdana,sans-serif;
+    height: 24px;
+    font-size: 12px;
+}
+
+.RadioButtonList
+{
+    color: #333333;
+    font-family: Verdana,sans-serif;
+    font-size: 12px;
+    font-weight: normal;
+}
+
+
+
+.ForLegend
+{
+    font-family: Verdana;
+    color: #0054D2;
+    font-weight: bold;
+    border-color: #0054D2;
+    font-size: 12px;
+}
+
+.ForFieldset
+{
+    border: thin solid #3399FF;
+}
+
+.ListboxNew
+{
+    background-image: url(Images/form_bg.jpg);
+    background-repeat: repeat-x;
+    border: 1px solid #d1c7ac;
+    width: 238px;
+    color: #333333;
+    padding: 3px;
+    margin-right: 4px;
+    margin-bottom: 0px;
+    font-family: Verdana,sans-serif;
+    height: 60px;
+    font-size: 12px;
+}
+
+fileupload
+{
+    width: 255px;
+    font-size: 11px;
+    color: #000000;
+    border: solid;
+    border-width: 1px;
+    border-color: #7f9db9;
+    height: 17px;
+}
+
+.GridStyle
+{
+    border: 1px solid #007CA6;
+    background-color: White;
+    font-family: Verdana,sans-serif;
+    font-size: 12px;
+    border-collapse: collapse;
+    margin-bottom: 0px;
+    width: 100%;
+}
+.GridStyle tr
+{
+    border: 1px solid #007CA6;
+    color: #333333;
+    height: 22px;
+    text-align: left;
+}
+/* Your grid header column style */
+.GridStyle th
+{
+    background-color: rgb(217, 231, 255);
+    border: 1px solid #007CA6;
+    text-align: left;
+    font-weight: bold;
+    font-size: 13px;
+    padding: 4px;
+    color: #333333;
+    text-align: left;
+}
+/* Your grid header link style */
+
+
+.GridStyle td
+{
+    border-bottom: 1px solid #007CA6;
+    color: #333333;
+    height: 22px;
+    text-align: left;
+}
+
+
+.footerNew
+{
+    font-family: Verdana, sans-serif;
+    font-size: 11px;
+    color: #ffffff;
+    font-style: normal;
+    font-weight: bold;
+    background-color: #1a3c6a;
+    height: 17px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.modalBackground
+{
+    background-color: #dfe6f0;
+    filter: alpha(opacity=60);
+    opacity: 0.6;
+}
+
+/* Style for Login & Password Name */
+
+.nam1
+{
+    font-family: 'Calibri';
+    font-size: 14px;
+    color: #06254d;
+    font-style: normal;
+    font-weight: bold;
+    text-align: left;
+    vertical-align: bottom;
+    padding: 4px 2px 0 8px;
+}
+
+
+
+/* Style for Login & Password TextBox  */
+
+.lgtxt
+{
+    padding: 0 2px 7px 8px;
+}
+
+
+.modalBackground
+{
+    background-color: Black;
+    filter: alpha(opacity=80);
+    opacity: 0.8;
+    z-index: 10000;
+}
+

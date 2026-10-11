@@ -1,0 +1,8 @@
+use [TrainingFeedback]
+go
+
+INSERT INTO  Admin VALUES(35505,0)
+INSERT INTO  Admin VALUES(44352,0)
+INSERT INTO  Admin VALUES(70095,0)
+
+go

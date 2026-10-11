@@ -1,0 +1,528 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{B588CE57-FCDF-4193-AF80-A110511C4E94}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>HexFeedback</RootNamespace>
+    <AssemblyName>HexFeedback</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile />
+    <UseIISExpress>false</UseIISExpress>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PackageAsSingleFile>true</PackageAsSingleFile>
+    <DesktopBuildPackageLocation>C:\Users\huser\Desktop\publish\HexFeedback.zip</DesktopBuildPackageLocation>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AjaxControlToolkit">
+      <HintPath>C:\inetpub\wwwroot\HexFeedback_deploy\bin\AjaxControlToolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="DocumentFormat.OpenXml">
+      <HintPath>..\..\..\ISG-PRoject\Hexavarsity\External DLL\External DLL\DocumentFormat.OpenXml.dll</HintPath>
+    </Reference>
+    <Reference Include="DocX">
+      <HintPath>C:\inetpub\wwwroot\HexFeedback_deploy\bin\DocX.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp">
+      <HintPath>C:\Users\22002\Desktop\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.9.0, Culture=neutral, PublicKeyToken=b32731d11ce58905">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Bin\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Office, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.DirectoryServices.AccountManagement" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Account\Images\arrow.png" />
+    <Content Include="Account\Images\arrow1.gif" />
+    <Content Include="Account\Images\banner.gif" />
+    <Content Include="Account\Images\bannerNew.gif" />
+    <Content Include="Account\Images\ban_center.jpg" />
+    <Content Include="Account\Images\ban_center1.jpg" />
+    <Content Include="Account\Images\ban_left.jpg" />
+    <Content Include="Account\Images\ban_left1.jpg" />
+    <Content Include="Account\Images\Ban_right.jpg" />
+    <Content Include="Account\Images\Ban_right1.jpg" />
+    <Content Include="Account\Images\bg1.jpg" />
+    <Content Include="Account\Images\Bitmap1.bmp" />
+    <Content Include="Account\Images\bit_botbg.png" />
+    <Content Include="Account\Images\bit_botbg1.png" />
+    <Content Include="Account\Images\bit_lft_bg.png" />
+    <Content Include="Account\Images\bit_lft_bot.png" />
+    <Content Include="Account\Images\bit_lft_bot_new.png" />
+    <Content Include="Account\Images\bit_lft_bot_neww.png" />
+    <Content Include="Account\Images\bit_lft_top.png" />
+    <Content Include="Account\Images\bit_rht_bg.png" />
+    <Content Include="Account\Images\bit_rht_bot.png" />
+    <Content Include="Account\Images\bit_right_bot_neww.png" />
+    <Content Include="Account\Images\bit_topbg.png" />
+    <Content Include="Account\Images\bit_topbg1.png" />
+    <Content Include="Account\Images\bottom_mid_bg.gif" />
+    <Content Include="Account\Images\course_info.gif" />
+    <Content Include="Account\Images\FB1.jpg" />
+    <Content Include="Account\Images\FB11.png" />
+    <Content Include="Account\Images\feedback.jpg" />
+    <Content Include="Account\Images\loading11.gif" />
+    <Content Include="Account\Images\Loginbutton_new.png" />
+    <Content Include="Account\Images\login_button4.png" />
+    <Content Include="Account\Images\marks_entry.gif" />
+    <Content Include="Account\Images\NewStyles.css" />
+    <Content Include="Account\Images\page-loading.gif" />
+    <Content Include="Account\Images\quick_link_header_left.gif" />
+    <Content Include="Account\Images\quick_link_header_left_new.gif" />
+    <Content Include="Account\Images\quick_link_header_mid.gif" />
+    <Content Include="Account\Images\quick_link_header_right.gif" />
+    <Content Include="Account\Images\quick_link_header_right_new.gif" />
+    <Content Include="Account\Images\session_implement.gif" />
+    <Content Include="Account\Images\spacer.gif" />
+    <Content Include="Account\Images\view_reports.gif" />
+    <Content Include="Account\Login.aspx" />
+    <Content Include="Account\Styles\newstyle.css" />
+    <Content Include="Account\Styles\NewStyles.css" />
+    <Content Include="Account\Styles\Site.css" />
+    <Content Include="Account\Styles\Style.css" />
+    <Content Include="ExcelExport.aspx" />
+    <Content Include="FeedbackReview.aspx" />
+    <Content Include="FeedbackSup.aspx" />
+    <Content Include="Global.asax" />
+    <Content Include="Images\ban_center.jpg" />
+    <Content Include="Images\ban_center1.jpg" />
+    <Content Include="Images\ban_left.jpg" />
+    <Content Include="Images\ban_left1.jpg" />
+    <Content Include="Images\Ban_right.jpg" />
+    <Content Include="Images\Ban_right1.jpg" />
+    <Content Include="Images\bg1.jpg" />
+    <Content Include="Images\bit_botbg1.png" />
+    <Content Include="Images\bit_lft_bg.png" />
+    <Content Include="Images\bit_lft_bot.png" />
+    <Content Include="Images\bit_lft_bot_new.png" />
+    <Content Include="Images\bit_lft_bot_neww.png" />
+    <Content Include="Images\bit_lft_top.png" />
+    <Content Include="Images\bit_rht_bg.png" />
+    <Content Include="Images\bit_rht_bot.png" />
+    <Content Include="Images\bit_right_bot_neww.png" />
+    <Content Include="Images\bit_topbg.png" />
+    <Content Include="Images\bit_topbg1.png" />
+    <Content Include="Images\butbg.gif" />
+    <Content Include="Images\calendar.gif" />
+    <Content Include="Images\collapse1.jpg" />
+    <Content Include="Images\expand1.jpg" />
+    <Content Include="Images\grd_alt.png" />
+    <Content Include="Images\grd_head.png" />
+    <Content Include="Images\grd_pgr.png" />
+    <Content Include="Images\bg.jpg" />
+    <Content Include="Images\form_bg.jpg" />
+    <Content Include="Images\HexawareLogo.jpg" />
+    <Content Include="Account\Images\login_button2.png" />
+    <Content Include="Images\icon_men.gif" />
+    <Content Include="Images\imagesCA7JXO4K.jpg" />
+    <Content Include="Images\imagesCA9WYQ62.jpg" />
+    <Content Include="Images\images_loading_animation.gif" />
+    <Content Include="Images\loading11.gif" />
+    <Content Include="Images\loading_wh.gif" />
+    <Content Include="Images\Loginbutton_new.png" />
+    <Content Include="Images\login_button3.png" />
+    <Content Include="Images\page-loading.gif" />
+    <Content Include="Images\quick_link_header_left.gif" />
+    <Content Include="Images\quick_link_header_left_new.gif" />
+    <Content Include="Images\quick_link_header_mid.gif" />
+    <Content Include="Images\quick_link_header_right.gif" />
+    <Content Include="Images\quick_link_header_right_new.gif" />
+    <Content Include="Images\rounded.gif" />
+    <Content Include="Images\User IMAGE1.png" />
+    <Content Include="Images\User IMage2.png" />
+    <Content Include="LogOut.aspx" />
+    <Content Include="BalFeedback.aspx" />
+    <Content Include="Account\Images\vision_txt.png" />
+    <Content Include="Home.aspx" />
+    <Content Include="Images\BorderImage.png" />
+    <Content Include="Images\Borderimage2.png" />
+    <Content Include="Images\BorderimageBlue.png" />
+    <Content Include="Images\HV_BAN.gif" />
+    <Content Include="MasterVendor.aspx" />
+    <Content Include="MasterTrainer.aspx" />
+    <Content Include="Images\arrow.png" />
+    <Content Include="IndividAnalysis.aspx" />
+    <Content Include="FeedbackDef.aspx" />
+    <Content Include="Course.aspx" />
+    <Content Include="IdividualRep.aspx" />
+    <Content Include="Images\arrow1.gif" />
+    <Content Include="Images\banner.gif" />
+    <Content Include="Images\Bitmap1.bmp" />
+    <Content Include="Images\course_info.gif" />
+    <Content Include="Images\marks_entry.gif" />
+    <Content Include="Images\session_implement.gif" />
+    <Content Include="Images\view_reports.gif" />
+    <Content Include="css\style1.css" />
+    <Content Include="MasterMail.aspx" />
+    <Content Include="NominationList.aspx" />
+    <None Include="Properties\DataSources\System.Data.DataSet.datasource" />
+    <Content Include="Session.aspx" />
+    <Content Include="SkillPort\Images\ban_center.jpg" />
+    <Content Include="SkillPort\Images\ban_left.jpg" />
+    <Content Include="SkillPort\Images\Ban_right.jpg" />
+    <Content Include="SkillPort\Images\excel_icon.gif" />
+    <Content Include="SkillPort\Images\loading11.gif" />
+    <Content Include="SkillPort\Images\roller01.gif" />
+    <Content Include="SkillPort\Scripts\jquery-1.11.0.min.js" />
+    <Content Include="SkillPort\SkillPortUpload.aspx" />
+    <Content Include="Styles\newstyle.css" />
+    <Content Include="Styles\NewStyles.css" />
+    <Content Include="Styles\Style.css" />
+    <Content Include="Styles\Site.css" />
+    <Content Include="Scripts\jquery-1.4.1-vsdoc.js" />
+    <Content Include="Scripts\jquery-1.4.1.js" />
+    <Content Include="Scripts\jquery-1.4.1.min.js" />
+    <Content Include="test.aspx" />
+    <Content Include="TrainingEffectivenessReport.aspx" />
+    <Content Include="TrainingList.aspx" />
+    <Content Include="UserHome.aspx" />
+    <None Include="Properties\PublishProfiles\AutoBuild.pubxml" />
+    <None Include="Web References\Authentication\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\Authentication\StationHAuthentication.disco" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Feedback.aspx" />
+    <Content Include="Winter.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Account\Initial.Master.cs">
+      <DependentUpon>Initial.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Initial.Master.designer.cs">
+      <DependentUpon>Initial.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Account\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ExcelExport.aspx.cs">
+      <DependentUpon>ExcelExport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ExcelExport.aspx.designer.cs">
+      <DependentUpon>ExcelExport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FeedbackReview.aspx.cs">
+      <DependentUpon>FeedbackReview.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FeedbackReview.aspx.designer.cs">
+      <DependentUpon>FeedbackReview.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FeedbackSup.aspx.cs">
+      <DependentUpon>FeedbackSup.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FeedbackSup.aspx.designer.cs">
+      <DependentUpon>FeedbackSup.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LogOut.aspx.cs">
+      <DependentUpon>LogOut.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LogOut.aspx.designer.cs">
+      <DependentUpon>LogOut.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BalFeedback.aspx.cs">
+      <DependentUpon>BalFeedback.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BalFeedback.aspx.designer.cs">
+      <DependentUpon>BalFeedback.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Home.aspx.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Home.aspx.designer.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MasterVendor.aspx.cs">
+      <DependentUpon>MasterVendor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MasterVendor.aspx.designer.cs">
+      <DependentUpon>MasterVendor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MasterTrainer.aspx.cs">
+      <DependentUpon>MasterTrainer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MasterTrainer.aspx.designer.cs">
+      <DependentUpon>MasterTrainer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="IndividAnalysis.aspx.cs">
+      <DependentUpon>IndividAnalysis.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="IndividAnalysis.aspx.designer.cs">
+      <DependentUpon>IndividAnalysis.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FeedbackDef.aspx.cs">
+      <DependentUpon>FeedbackDef.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FeedbackDef.aspx.designer.cs">
+      <DependentUpon>FeedbackDef.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Course.aspx.cs">
+      <DependentUpon>Course.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Course.aspx.designer.cs">
+      <DependentUpon>Course.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="IdividualRep.aspx.cs">
+      <DependentUpon>IdividualRep.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="IdividualRep.aspx.designer.cs">
+      <DependentUpon>IdividualRep.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MasterMail.aspx.cs">
+      <DependentUpon>MasterMail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MasterMail.aspx.designer.cs">
+      <DependentUpon>MasterMail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NominationList.aspx.cs">
+      <DependentUpon>NominationList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NominationList.aspx.designer.cs">
+      <DependentUpon>NominationList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Session.aspx.cs">
+      <DependentUpon>Session.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Session.aspx.designer.cs">
+      <DependentUpon>Session.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Site.Master.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site.Master.designer.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Feedback.aspx.cs">
+      <DependentUpon>Feedback.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Feedback.aspx.designer.cs">
+      <DependentUpon>Feedback.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SkillPort\SkillPortUpload.aspx.cs">
+      <DependentUpon>SkillPortUpload.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SkillPort\SkillPortUpload.aspx.designer.cs">
+      <DependentUpon>SkillPortUpload.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SkillPort\SupportFiles\Basepage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SkillPort\SupportFiles\Entity.cs" />
+    <Compile Include="SkillPort\SupportFiles\Procedures.cs" />
+    <Compile Include="SkillPort\SupportFiles\skillport_DAO.cs" />
+    <Compile Include="test.aspx.cs">
+      <DependentUpon>test.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="test.aspx.designer.cs">
+      <DependentUpon>test.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TrainingEffectivenessReport.aspx.cs">
+      <DependentUpon>TrainingEffectivenessReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TrainingEffectivenessReport.aspx.designer.cs">
+      <DependentUpon>TrainingEffectivenessReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TrainingList.aspx.cs">
+      <DependentUpon>TrainingList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TrainingList.aspx.designer.cs">
+      <DependentUpon>TrainingList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserHome.aspx.cs">
+      <DependentUpon>UserHome.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserHome.aspx.designer.cs">
+      <DependentUpon>UserHome.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\Authentication\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="NominationFile\" />
+    <Folder Include="SkillPort\ExcelFile\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Account\Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Site.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\HexFBBLL\HexFBBLL.csproj">
+      <Project>{9DAADF74-9B72-47D0-8C67-676B07C59003}</Project>
+      <Name>HexFBBLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\HexFBModule\HexFBModule.csproj">
+      <Project>{098654AF-7C8F-4B84-89DF-ACDFD2D77084}</Project>
+      <Name>HexFBModule</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Account\Initial.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\Authentication\StationHAuthentication.wsdl" />
+    <None Include="WordDoc.mht" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="http://172.25.121.208/stationhAuthentication/StationHAuthentication.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\Authentication\</RelPath>
+      <UpdateFromURL>http://172.25.121.208/stationhAuthentication/StationHAuthentication.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>HexFeedback_Authentication_StationHAuthentication</CachedSettingsPropName>
+    </WebReferenceUrl>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>60485</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

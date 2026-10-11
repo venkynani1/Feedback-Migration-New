@@ -1,0 +1,1 @@
+  Insert into T_MAIL_TRIGGER Values (47032,'LOC','MUMBAIMBP','1','OBS_ADMIN',GETDATE(),NULL)

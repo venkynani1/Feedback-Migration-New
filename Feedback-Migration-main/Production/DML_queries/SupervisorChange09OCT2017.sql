@@ -1,0 +1,54 @@
+ Declare             
+ @ProjectCode VARCHAR(10) ='PRJ-1758',                            
+ @CVAID INT  
+
+
+BEGIN  
+ SET NOCOUNT ON;  
+ 
+ BEGIN  
+  IF EXISTS (   
+     SELECT 1 FROM [RESOURCE_MGMT].[dbo].[VW_RM_PMPD_DETAILS_BRAINBOX]  
+     WHERE S_ROLE_ID = 'PM' AND S_PA_PROJECT_ID = 'PRJ-4182'
+       )  
+  BEGIN     
+   SELECT  DISTINCT CAST(A.S_EMPLOYEE_ID AS VARCHAR(25)) AS Value,  
+     (SELECT (B.S_EMPLOYEE_FNAME + ' ' + B.S_EMPLOYEE_LNAME) FROM dbo.[UF_GetEmployeeExchangeDetails](A.S_EMPLOYEE_ID) B)
+	 + ' (' + CAST(A.S_EMPLOYEE_ID AS VARCHAR(25)) + ')' AS [Text]  
+   FROM dbo.[UF_GetPMPDAllocationDetails]() A       
+   WHERE A.S_ROLE_ID = 'PM' AND A.PROJECTCODE = 'PRJ-1758'
+  END  
+  ELSE IF EXISTS(
+			SELECT 1 FROM DBO.M_BPS_RMG_PM_PD_ALLOCATION 
+			WHERE S_ROLE_ID = 'PM' AND PROJECTCODE = @PROJECTCODE
+			)
+			BEGIN
+			SELECT  DISTINCT CAST(A.S_EMPLOYEE_ID AS VARCHAR(25)) AS Value,  
+				 (SELECT (B.S_EMPLOYEE_FNAME + ' ' + B.S_EMPLOYEE_LNAME) FROM dbo.[UF_GetEmployeeExchangeDetails](A.S_EMPLOYEE_ID) B)
+				 + ' (' + CAST(A.S_EMPLOYEE_ID AS VARCHAR(25)) + ')' AS [Text]  
+			   FROM dbo.[UF_GetPMPDAllocationDetails]() A  				 
+			   WHERE A.S_ROLE_ID = 'PM' AND A.PROJECTCODE = @ProjectCode
+			END
+  ELSE  
+  BEGIN  
+   SELECT * FROM  
+   (  
+    SELECT '' AS Value, '' AS 'Text'  
+   ) A WHERE Value <> ''  
+  END  
+ END  
+END
+
+
+
+     SELECT * FROM [RESOURCE_MGMT].[dbo].[VW_RM_PMPD_DETAILS_BRAINBOX]  
+     WHERE S_ROLE_ID = 'PM' AND S_PA_PROJECT_ID = 'PRJ-1758'
+
+
+	 SELECT * FROM [RESOURCE_MGMT].[dbo].[VW_RM_PMPD_DETAILS_BRAINBOX]  
+     WHERE S_ROLE_ID = 'PM' AND S_PA_PROJECT_ID = 'PRJ-4182'
+
+
+	 sp_helptext VW_RM_PMPD_DETAILS_BRAINBOX
+
+	

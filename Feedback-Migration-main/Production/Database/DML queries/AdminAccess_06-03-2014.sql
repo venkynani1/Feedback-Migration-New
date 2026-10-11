@@ -1,0 +1,6 @@
+
+
+
+use TrainingFeedback
+
+insert into [Admin] values ('27824','0')

@@ -1,0 +1,529 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit http://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <_PublishTargetUrl>D:\Feedback_BAT\Application\HexFeedback\HexFeedback\..\build\HexFeedback</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="Account/Images/arrow.png">
+      <publishTime>12/24/2020 10:51:39</publishTime>
+    </File>
+    <File Include="Account/Images/arrow1.gif">
+      <publishTime>12/24/2020 10:51:40</publishTime>
+    </File>
+    <File Include="Account/Images/banner.gif">
+      <publishTime>12/24/2020 10:51:39</publishTime>
+    </File>
+    <File Include="Account/Images/bannerNew.gif">
+      <publishTime>12/24/2020 10:51:39</publishTime>
+    </File>
+    <File Include="Account/Images/ban_center.jpg">
+      <publishTime>12/24/2020 10:51:39</publishTime>
+    </File>
+    <File Include="Account/Images/ban_center1.jpg">
+      <publishTime>12/24/2020 10:51:39</publishTime>
+    </File>
+    <File Include="Account/Images/ban_left.jpg">
+      <publishTime>12/24/2020 10:51:39</publishTime>
+    </File>
+    <File Include="Account/Images/ban_left1.jpg">
+      <publishTime>12/24/2020 10:51:39</publishTime>
+    </File>
+    <File Include="Account/Images/Ban_right.jpg">
+      <publishTime>12/24/2020 10:51:39</publishTime>
+    </File>
+    <File Include="Account/Images/Ban_right1.jpg">
+      <publishTime>12/24/2020 10:51:39</publishTime>
+    </File>
+    <File Include="Account/Images/bg1.jpg">
+      <publishTime>12/24/2020 10:51:40</publishTime>
+    </File>
+    <File Include="Account/Images/Bitmap1.bmp">
+      <publishTime>12/24/2020 10:51:40</publishTime>
+    </File>
+    <File Include="Account/Images/bit_botbg.png">
+      <publishTime>12/24/2020 10:51:39</publishTime>
+    </File>
+    <File Include="Account/Images/bit_botbg1.png">
+      <publishTime>12/24/2020 10:51:39</publishTime>
+    </File>
+    <File Include="Account/Images/bit_lft_bg.png">
+      <publishTime>12/24/2020 10:51:39</publishTime>
+    </File>
+    <File Include="Account/Images/bit_lft_bot.png">
+      <publishTime>12/24/2020 10:51:39</publishTime>
+    </File>
+    <File Include="Account/Images/bit_lft_bot_new.png">
+      <publishTime>12/24/2020 10:51:40</publishTime>
+    </File>
+    <File Include="Account/Images/bit_lft_bot_neww.png">
+      <publishTime>12/24/2020 10:51:39</publishTime>
+    </File>
+    <File Include="Account/Images/bit_lft_top.png">
+      <publishTime>12/24/2020 10:51:39</publishTime>
+    </File>
+    <File Include="Account/Images/bit_rht_bg.png">
+      <publishTime>12/24/2020 10:51:39</publishTime>
+    </File>
+    <File Include="Account/Images/bit_rht_bot.png">
+      <publishTime>12/24/2020 10:51:40</publishTime>
+    </File>
+    <File Include="Account/Images/bit_right_bot_neww.png">
+      <publishTime>12/24/2020 10:51:39</publishTime>
+    </File>
+    <File Include="Account/Images/bit_topbg.png">
+      <publishTime>12/24/2020 10:51:39</publishTime>
+    </File>
+    <File Include="Account/Images/bit_topbg1.png">
+      <publishTime>12/24/2020 10:51:40</publishTime>
+    </File>
+    <File Include="Account/Images/bottom_mid_bg.gif">
+      <publishTime>12/24/2020 10:51:40</publishTime>
+    </File>
+    <File Include="Account/Images/course_info.gif">
+      <publishTime>12/24/2020 10:51:39</publishTime>
+    </File>
+    <File Include="Account/Images/FB1.jpg">
+      <publishTime>12/24/2020 10:51:39</publishTime>
+    </File>
+    <File Include="Account/Images/FB11.png">
+      <publishTime>12/24/2020 10:51:39</publishTime>
+    </File>
+    <File Include="Account/Images/feedback.jpg">
+      <publishTime>12/24/2020 10:51:39</publishTime>
+    </File>
+    <File Include="Account/Images/loading11.gif">
+      <publishTime>12/24/2020 10:51:39</publishTime>
+    </File>
+    <File Include="Account/Images/Loginbutton_new.png">
+      <publishTime>12/24/2020 10:51:39</publishTime>
+    </File>
+    <File Include="Account/Images/login_button2.png">
+      <publishTime>12/24/2020 10:51:39</publishTime>
+    </File>
+    <File Include="Account/Images/login_button4.png">
+      <publishTime>12/24/2020 10:51:40</publishTime>
+    </File>
+    <File Include="Account/Images/marks_entry.gif">
+      <publishTime>12/24/2020 10:51:39</publishTime>
+    </File>
+    <File Include="Account/Images/NewStyles.css">
+      <publishTime>12/24/2020 10:51:39</publishTime>
+    </File>
+    <File Include="Account/Images/page-loading.gif">
+      <publishTime>12/24/2020 10:51:39</publishTime>
+    </File>
+    <File Include="Account/Images/quick_link_header_left.gif">
+      <publishTime>12/24/2020 10:51:39</publishTime>
+    </File>
+    <File Include="Account/Images/quick_link_header_left_new.gif">
+      <publishTime>12/24/2020 10:51:40</publishTime>
+    </File>
+    <File Include="Account/Images/quick_link_header_mid.gif">
+      <publishTime>12/24/2020 10:51:39</publishTime>
+    </File>
+    <File Include="Account/Images/quick_link_header_right.gif">
+      <publishTime>12/24/2020 10:51:40</publishTime>
+    </File>
+    <File Include="Account/Images/quick_link_header_right_new.gif">
+      <publishTime>12/24/2020 10:51:39</publishTime>
+    </File>
+    <File Include="Account/Images/session_implement.gif">
+      <publishTime>12/24/2020 10:51:39</publishTime>
+    </File>
+    <File Include="Account/Images/spacer.gif">
+      <publishTime>12/24/2020 10:51:39</publishTime>
+    </File>
+    <File Include="Account/Images/view_reports.gif">
+      <publishTime>12/24/2020 10:51:40</publishTime>
+    </File>
+    <File Include="Account/Images/vision_txt.png">
+      <publishTime>12/24/2020 10:51:39</publishTime>
+    </File>
+    <File Include="Account/Initial.Master">
+      <publishTime>12/24/2020 10:51:39</publishTime>
+    </File>
+    <File Include="Account/Login.aspx">
+      <publishTime>12/24/2020 10:51:38</publishTime>
+    </File>
+    <File Include="Account/Styles/newstyle.css">
+      <publishTime>12/24/2020 10:51:40</publishTime>
+    </File>
+    <File Include="Account/Styles/NewStyles.css">
+      <publishTime>12/24/2020 10:51:39</publishTime>
+    </File>
+    <File Include="Account/Styles/Site.css">
+      <publishTime>12/24/2020 10:51:38</publishTime>
+    </File>
+    <File Include="Account/Styles/Style.css">
+      <publishTime>12/24/2020 10:51:39</publishTime>
+    </File>
+    <File Include="Account/Web.config">
+      <publishTime>12/24/2020 10:51:38</publishTime>
+    </File>
+    <File Include="BalFeedback.aspx">
+      <publishTime>12/24/2020 10:51:19</publishTime>
+    </File>
+    <File Include="bin/AjaxControlToolkit.dll">
+      <publishTime>12/24/2020 10:51:38</publishTime>
+    </File>
+    <File Include="bin/App_global.asax.compiled">
+      <publishTime>12/30/2020 16:07:50</publishTime>
+    </File>
+    <File Include="bin/App_global.asax.dll">
+      <publishTime>12/30/2020 16:07:50</publishTime>
+    </File>
+    <File Include="bin/DocumentFormat.OpenXml.dll">
+      <publishTime>12/09/2020 17:58:24</publishTime>
+    </File>
+    <File Include="bin/DocX.dll">
+      <publishTime>12/24/2020 10:51:30</publishTime>
+    </File>
+    <File Include="bin/HexFBBLL.dll">
+      <publishTime>12/30/2020 16:02:44</publishTime>
+    </File>
+    <File Include="bin/HexFBBLL.pdb">
+      <publishTime>12/30/2020 16:02:44</publishTime>
+    </File>
+    <File Include="bin/HexFBDAL.dll">
+      <publishTime>12/30/2020 16:02:44</publishTime>
+    </File>
+    <File Include="bin/HexFBDAL.pdb">
+      <publishTime>12/30/2020 16:02:44</publishTime>
+    </File>
+    <File Include="bin/HexFBDALFactory.dll">
+      <publishTime>12/30/2020 16:02:44</publishTime>
+    </File>
+    <File Include="bin/HexFBDALFactory.pdb">
+      <publishTime>12/30/2020 16:02:44</publishTime>
+    </File>
+    <File Include="bin/HexFBDBUtility.dll">
+      <publishTime>12/30/2020 16:02:44</publishTime>
+    </File>
+    <File Include="bin/HexFBDBUtility.pdb">
+      <publishTime>12/30/2020 16:02:44</publishTime>
+    </File>
+    <File Include="bin/HexFBIDAL.dll">
+      <publishTime>12/30/2020 16:02:44</publishTime>
+    </File>
+    <File Include="bin/HexFBIDAL.pdb">
+      <publishTime>12/30/2020 16:02:44</publishTime>
+    </File>
+    <File Include="bin/HexFBModule.dll">
+      <publishTime>12/30/2020 16:02:43</publishTime>
+    </File>
+    <File Include="bin/HexFBModule.pdb">
+      <publishTime>12/30/2020 16:02:43</publishTime>
+    </File>
+    <File Include="bin/HexFeedback.dll">
+      <publishTime>12/30/2020 16:07:34</publishTime>
+    </File>
+    <File Include="bin/HexFeedback.pdb">
+      <publishTime>12/30/2020 16:07:34</publishTime>
+    </File>
+    <File Include="bin/HexFeedback.XmlSerializers.dll">
+      <publishTime>12/30/2020 16:07:38</publishTime>
+    </File>
+    <File Include="bin/itextsharp.dll">
+      <publishTime>12/24/2020 10:51:38</publishTime>
+    </File>
+    <File Include="bin/log4net.dll">
+      <publishTime>12/24/2020 10:51:38</publishTime>
+    </File>
+    <File Include="Course.aspx">
+      <publishTime>12/24/2020 10:51:03</publishTime>
+    </File>
+    <File Include="css/style1.css">
+      <publishTime>12/24/2020 10:51:19</publishTime>
+    </File>
+    <File Include="ExcelExport.aspx">
+      <publishTime>12/24/2020 10:51:40</publishTime>
+    </File>
+    <File Include="Feedback.aspx">
+      <publishTime>12/24/2020 10:51:38</publishTime>
+    </File>
+    <File Include="FeedbackDef.aspx">
+      <publishTime>12/24/2020 10:51:19</publishTime>
+    </File>
+    <File Include="FeedbackReview.aspx">
+      <publishTime>12/24/2020 10:51:40</publishTime>
+    </File>
+    <File Include="FeedbackSup.aspx">
+      <publishTime>12/24/2020 10:51:40</publishTime>
+    </File>
+    <File Include="Global.asax">
+      <publishTime>05/09/2017 16:43:06</publishTime>
+    </File>
+    <File Include="Home.aspx">
+      <publishTime>12/24/2020 10:51:18</publishTime>
+    </File>
+    <File Include="IdividualRep.aspx">
+      <publishTime>12/24/2020 10:51:22</publishTime>
+    </File>
+    <File Include="Images/arrow.png">
+      <publishTime>12/24/2020 10:51:22</publishTime>
+    </File>
+    <File Include="Images/arrow1.gif">
+      <publishTime>12/24/2020 10:51:22</publishTime>
+    </File>
+    <File Include="Images/banner.gif">
+      <publishTime>12/24/2020 10:51:22</publishTime>
+    </File>
+    <File Include="Images/ban_center.jpg">
+      <publishTime>12/24/2020 10:51:23</publishTime>
+    </File>
+    <File Include="Images/ban_center1.jpg">
+      <publishTime>12/24/2020 10:51:22</publishTime>
+    </File>
+    <File Include="Images/ban_left.jpg">
+      <publishTime>12/24/2020 10:51:23</publishTime>
+    </File>
+    <File Include="Images/ban_left1.jpg">
+      <publishTime>12/24/2020 10:51:22</publishTime>
+    </File>
+    <File Include="Images/Ban_right.jpg">
+      <publishTime>12/24/2020 10:51:22</publishTime>
+    </File>
+    <File Include="Images/Ban_right1.jpg">
+      <publishTime>12/24/2020 10:51:22</publishTime>
+    </File>
+    <File Include="Images/bg.jpg">
+      <publishTime>12/24/2020 10:51:22</publishTime>
+    </File>
+    <File Include="Images/bg1.jpg">
+      <publishTime>12/24/2020 10:51:22</publishTime>
+    </File>
+    <File Include="Images/Bitmap1.bmp">
+      <publishTime>12/24/2020 10:51:23</publishTime>
+    </File>
+    <File Include="Images/bit_botbg1.png">
+      <publishTime>12/24/2020 10:51:22</publishTime>
+    </File>
+    <File Include="Images/bit_lft_bg.png">
+      <publishTime>12/24/2020 10:51:22</publishTime>
+    </File>
+    <File Include="Images/bit_lft_bot.png">
+      <publishTime>12/24/2020 10:51:22</publishTime>
+    </File>
+    <File Include="Images/bit_lft_bot_new.png">
+      <publishTime>12/24/2020 10:51:23</publishTime>
+    </File>
+    <File Include="Images/bit_lft_bot_neww.png">
+      <publishTime>12/24/2020 10:51:22</publishTime>
+    </File>
+    <File Include="Images/bit_lft_top.png">
+      <publishTime>12/24/2020 10:51:22</publishTime>
+    </File>
+    <File Include="Images/bit_rht_bg.png">
+      <publishTime>12/24/2020 10:51:23</publishTime>
+    </File>
+    <File Include="Images/bit_rht_bot.png">
+      <publishTime>12/24/2020 10:51:22</publishTime>
+    </File>
+    <File Include="Images/bit_right_bot_neww.png">
+      <publishTime>12/24/2020 10:51:23</publishTime>
+    </File>
+    <File Include="Images/bit_topbg.png">
+      <publishTime>12/24/2020 10:51:23</publishTime>
+    </File>
+    <File Include="Images/bit_topbg1.png">
+      <publishTime>12/24/2020 10:51:22</publishTime>
+    </File>
+    <File Include="Images/BorderImage.png">
+      <publishTime>12/24/2020 10:51:22</publishTime>
+    </File>
+    <File Include="Images/Borderimage2.png">
+      <publishTime>12/24/2020 10:51:23</publishTime>
+    </File>
+    <File Include="Images/BorderimageBlue.png">
+      <publishTime>12/24/2020 10:51:22</publishTime>
+    </File>
+    <File Include="Images/butbg.gif">
+      <publishTime>12/24/2020 10:51:22</publishTime>
+    </File>
+    <File Include="Images/calendar.gif">
+      <publishTime>12/24/2020 10:51:22</publishTime>
+    </File>
+    <File Include="Images/collapse1.jpg">
+      <publishTime>12/24/2020 10:51:22</publishTime>
+    </File>
+    <File Include="Images/course_info.gif">
+      <publishTime>12/24/2020 10:51:22</publishTime>
+    </File>
+    <File Include="Images/expand1.jpg">
+      <publishTime>12/24/2020 10:51:22</publishTime>
+    </File>
+    <File Include="Images/form_bg.jpg">
+      <publishTime>12/24/2020 10:51:22</publishTime>
+    </File>
+    <File Include="Images/grd_alt.png">
+      <publishTime>12/24/2020 10:51:19</publishTime>
+    </File>
+    <File Include="Images/grd_head.png">
+      <publishTime>12/24/2020 10:51:22</publishTime>
+    </File>
+    <File Include="Images/grd_pgr.png">
+      <publishTime>12/24/2020 10:51:22</publishTime>
+    </File>
+    <File Include="Images/HexawareLogo.jpg">
+      <publishTime>12/24/2020 10:51:22</publishTime>
+    </File>
+    <File Include="Images/HV_BAN.gif">
+      <publishTime>12/24/2020 10:51:23</publishTime>
+    </File>
+    <File Include="Images/icon_men.gif">
+      <publishTime>12/24/2020 10:51:23</publishTime>
+    </File>
+    <File Include="Images/imagesCA7JXO4K.jpg">
+      <publishTime>12/24/2020 10:51:22</publishTime>
+    </File>
+    <File Include="Images/imagesCA9WYQ62.jpg">
+      <publishTime>12/24/2020 10:51:22</publishTime>
+    </File>
+    <File Include="Images/images_loading_animation.gif">
+      <publishTime>12/24/2020 10:51:22</publishTime>
+    </File>
+    <File Include="Images/loading11.gif">
+      <publishTime>12/24/2020 10:51:22</publishTime>
+    </File>
+    <File Include="Images/loading_wh.gif">
+      <publishTime>12/24/2020 10:51:22</publishTime>
+    </File>
+    <File Include="Images/Loginbutton_new.png">
+      <publishTime>12/24/2020 10:51:22</publishTime>
+    </File>
+    <File Include="Images/login_button3.png">
+      <publishTime>12/24/2020 10:51:23</publishTime>
+    </File>
+    <File Include="Images/marks_entry.gif">
+      <publishTime>12/24/2020 10:51:22</publishTime>
+    </File>
+    <File Include="Images/page-loading.gif">
+      <publishTime>12/24/2020 10:51:22</publishTime>
+    </File>
+    <File Include="Images/quick_link_header_left.gif">
+      <publishTime>12/24/2020 10:51:23</publishTime>
+    </File>
+    <File Include="Images/quick_link_header_left_new.gif">
+      <publishTime>12/24/2020 10:51:22</publishTime>
+    </File>
+    <File Include="Images/quick_link_header_mid.gif">
+      <publishTime>12/24/2020 10:51:19</publishTime>
+    </File>
+    <File Include="Images/quick_link_header_right.gif">
+      <publishTime>12/24/2020 10:51:22</publishTime>
+    </File>
+    <File Include="Images/quick_link_header_right_new.gif">
+      <publishTime>12/24/2020 10:51:22</publishTime>
+    </File>
+    <File Include="Images/rounded.gif">
+      <publishTime>12/24/2020 10:51:22</publishTime>
+    </File>
+    <File Include="Images/session_implement.gif">
+      <publishTime>12/24/2020 10:51:22</publishTime>
+    </File>
+    <File Include="Images/User IMAGE1.png">
+      <publishTime>12/24/2020 10:51:22</publishTime>
+    </File>
+    <File Include="Images/User IMage2.png">
+      <publishTime>12/24/2020 10:51:22</publishTime>
+    </File>
+    <File Include="Images/view_reports.gif">
+      <publishTime>12/24/2020 10:51:22</publishTime>
+    </File>
+    <File Include="IndividAnalysis.aspx">
+      <publishTime>12/24/2020 10:51:37</publishTime>
+    </File>
+    <File Include="LogOut.aspx">
+      <publishTime>12/24/2020 10:51:22</publishTime>
+    </File>
+    <File Include="MasterMail.aspx">
+      <publishTime>12/24/2020 10:51:19</publishTime>
+    </File>
+    <File Include="MasterTrainer.aspx">
+      <publishTime>12/24/2020 10:51:38</publishTime>
+    </File>
+    <File Include="MasterVendor.aspx">
+      <publishTime>12/24/2020 10:51:22</publishTime>
+    </File>
+    <File Include="NominationList.aspx">
+      <publishTime>12/24/2020 10:51:22</publishTime>
+    </File>
+    <File Include="PrecompiledApp.config">
+      <publishTime>12/30/2020 16:07:41</publishTime>
+    </File>
+    <File Include="Scripts/jquery-1.4.1-vsdoc.js">
+      <publishTime>12/24/2020 10:51:19</publishTime>
+    </File>
+    <File Include="Scripts/jquery-1.4.1.js">
+      <publishTime>12/24/2020 10:51:19</publishTime>
+    </File>
+    <File Include="Scripts/jquery-1.4.1.min.js">
+      <publishTime>12/24/2020 10:51:19</publishTime>
+    </File>
+    <File Include="Session.aspx">
+      <publishTime>12/24/2020 10:51:23</publishTime>
+    </File>
+    <File Include="Site.Master">
+      <publishTime>12/24/2020 10:51:19</publishTime>
+    </File>
+    <File Include="SkillPort/Images/ban_center.jpg">
+      <publishTime>12/24/2020 10:51:19</publishTime>
+    </File>
+    <File Include="SkillPort/Images/ban_left.jpg">
+      <publishTime>12/24/2020 10:51:19</publishTime>
+    </File>
+    <File Include="SkillPort/Images/Ban_right.jpg">
+      <publishTime>12/24/2020 10:51:18</publishTime>
+    </File>
+    <File Include="SkillPort/Images/excel_icon.gif">
+      <publishTime>12/24/2020 10:51:18</publishTime>
+    </File>
+    <File Include="SkillPort/Images/loading11.gif">
+      <publishTime>12/24/2020 10:51:18</publishTime>
+    </File>
+    <File Include="SkillPort/Images/roller01.gif">
+      <publishTime>12/24/2020 10:51:19</publishTime>
+    </File>
+    <File Include="SkillPort/Scripts/jquery-1.11.0.min.js">
+      <publishTime>12/24/2020 10:51:16</publishTime>
+    </File>
+    <File Include="SkillPort/SkillPortUpload.aspx">
+      <publishTime>12/24/2020 10:51:18</publishTime>
+    </File>
+    <File Include="Styles/newstyle.css">
+      <publishTime>12/24/2020 10:51:37</publishTime>
+    </File>
+    <File Include="Styles/NewStyles.css">
+      <publishTime>12/24/2020 10:51:40</publishTime>
+    </File>
+    <File Include="Styles/Site.css">
+      <publishTime>12/24/2020 10:51:37</publishTime>
+    </File>
+    <File Include="Styles/Style.css">
+      <publishTime>12/24/2020 10:51:38</publishTime>
+    </File>
+    <File Include="test.aspx">
+      <publishTime>12/24/2020 10:51:22</publishTime>
+    </File>
+    <File Include="TrainingEffectivenessReport.aspx">
+      <publishTime>12/24/2020 10:51:19</publishTime>
+    </File>
+    <File Include="TrainingList.aspx">
+      <publishTime>12/24/2020 10:51:40</publishTime>
+    </File>
+    <File Include="UserHome.aspx">
+      <publishTime>12/24/2020 10:51:19</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>12/30/2020 16:07:39</publishTime>
+    </File>
+    <File Include="Winter.jpg">
+      <publishTime>12/24/2020 10:51:38</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

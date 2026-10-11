@@ -1,0 +1,7 @@
+E:\TrainingFedback\HexFBDBUtility\bin\Release\HexFBDBUtility.dll
+E:\TrainingFedback\HexFBDBUtility\bin\Release\HexFBDBUtility.pdb
+E:\TrainingFedback\HexFBDBUtility\bin\Release\HexFBModule.dll
+E:\TrainingFedback\HexFBDBUtility\bin\Release\HexFBModule.pdb
+E:\TrainingFedback\HexFBDBUtility\obj\Release\HexFBDBUtility.csprojResolveAssemblyReference.cache
+E:\TrainingFedback\HexFBDBUtility\obj\Release\HexFBDBUtility.dll
+E:\TrainingFedback\HexFBDBUtility\obj\Release\HexFBDBUtility.pdb

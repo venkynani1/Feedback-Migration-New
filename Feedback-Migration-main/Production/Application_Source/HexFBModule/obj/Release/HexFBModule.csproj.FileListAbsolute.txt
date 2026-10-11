@@ -1,0 +1,4 @@
+E:\TrainingFedback\HexFBModule\bin\Release\HexFBModule.dll
+E:\TrainingFedback\HexFBModule\bin\Release\HexFBModule.pdb
+E:\TrainingFedback\HexFBModule\obj\Release\HexFBModule.dll
+E:\TrainingFedback\HexFBModule\obj\Release\HexFBModule.pdb

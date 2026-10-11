@@ -1,0 +1,1428 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="IsValidUser">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsValidUserResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="IsValidUserResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateUser">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="empId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="lName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dob" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="location" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="grade" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="address" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="company" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="City" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Department" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="State" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Zip" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Country" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="manager" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="designation" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="business" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="business2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="mobile" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="homePhone" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="empDName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="homePhone2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fax" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pager1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="office" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateUserResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CreateUserResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateUserDetails_WithStatus">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="empId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="emailId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="lName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dob" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="location" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="empStatus" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="grade" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="address" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="company" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="City" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Department" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="State" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Zip" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Country" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="manager" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="designation" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="business" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="business2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="mobile" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="homePhone" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="empDName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="homePhone2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pager1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pager2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fax" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="office" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateUserDetails_WithStatusResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateUserDetails_WithStatusResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateUserDetails">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="empId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="emailId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="lName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dob" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="location" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="grade" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="address" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="company" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="City" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Department" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="State" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Zip" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Country" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="manager" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="designation" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="business" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="business2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="mobile" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="homePhone" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateUserDetailsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateUserDetailsResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserForId">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserForIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetUserForIdResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckPswdPolicy">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="empid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="newpassword" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckPswdPolicyResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CheckPswdPolicyResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ChangePassword">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="oldpassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="newpassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dob" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ChangePasswordResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ChangePasswordResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RemoveUser">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="empName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RemoveUserResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="RemoveUserResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsUserInADS">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsUserInADSResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="IsUserInADSResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsTokenAvailable">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsTokenAvailableResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="IsTokenAvailableResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ResetPassword">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ResetPasswordResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ResetPasswordResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ForgotPassword">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dob" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="quesNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="quesText" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="answerText" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ForgotPasswordResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ForgotPasswordResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EnableUserAccount">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EnableUserAccountResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="EnableUserAccountResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MoveIDTo_Location_MailGroup">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UserId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ouDefault" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MoveIDTo_Location_MailGroupResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="DisableUserAccount">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DisableUserAccountResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DisableUserAccountResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DisableUserAccount_VBR">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DisableUserAccount_VBRResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DisableUserAccount_VBRResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDaysRemaining">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDaysRemainingResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetDaysRemainingResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ResetToken">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ResetTokenResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ResetTokenResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAccountStatus">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAccountStatusResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetAccountStatusResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetEmailAddr">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="empid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetEmailAddrResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetEmailAddrResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetToken">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="quesNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="quesText" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="answer" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetTokenResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SetTokenResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ModifyToken">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dob" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="quesNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="quesText" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="answerText" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ModifyTokenResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ModifyTokenResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckForAccountLock">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckForAccountLockResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CheckForAccountLockResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UnLock">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UnLockResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UnLockResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsUserAvailable">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsUserAvailableResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="IsUserAvailableResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllUsersToResetToken">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetAllUsersToResetTokenResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllUsersToResetTokenResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserForName">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserForNameResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetUserForNameResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsUserIdinVBR">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Userid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ouDefault" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsUserIdinVBRResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="IsUserIdinVBRResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsUserIdinDA">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Userid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ouDefault" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsUserIdinDAResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="IsUserIdinDAResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsInRole">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UserID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="role" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsInRoleResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="IsInRoleResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getUserInSecurityGroup">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Users" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getUserInSecurityGroupResponse">
+        <s:complexType />
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="IsValidUserSoapIn">
+    <wsdl:part name="parameters" element="tns:IsValidUser" />
+  </wsdl:message>
+  <wsdl:message name="IsValidUserSoapOut">
+    <wsdl:part name="parameters" element="tns:IsValidUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreateUserSoapIn">
+    <wsdl:part name="parameters" element="tns:CreateUser" />
+  </wsdl:message>
+  <wsdl:message name="CreateUserSoapOut">
+    <wsdl:part name="parameters" element="tns:CreateUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateUserDetails_WithStatusSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateUserDetails_WithStatus" />
+  </wsdl:message>
+  <wsdl:message name="UpdateUserDetails_WithStatusSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateUserDetails_WithStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateUserDetailsSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateUserDetails" />
+  </wsdl:message>
+  <wsdl:message name="UpdateUserDetailsSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateUserDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetUserForIdSoapIn">
+    <wsdl:part name="parameters" element="tns:GetUserForId" />
+  </wsdl:message>
+  <wsdl:message name="GetUserForIdSoapOut">
+    <wsdl:part name="parameters" element="tns:GetUserForIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="CheckPswdPolicySoapIn">
+    <wsdl:part name="parameters" element="tns:CheckPswdPolicy" />
+  </wsdl:message>
+  <wsdl:message name="CheckPswdPolicySoapOut">
+    <wsdl:part name="parameters" element="tns:CheckPswdPolicyResponse" />
+  </wsdl:message>
+  <wsdl:message name="ChangePasswordSoapIn">
+    <wsdl:part name="parameters" element="tns:ChangePassword" />
+  </wsdl:message>
+  <wsdl:message name="ChangePasswordSoapOut">
+    <wsdl:part name="parameters" element="tns:ChangePasswordResponse" />
+  </wsdl:message>
+  <wsdl:message name="RemoveUserSoapIn">
+    <wsdl:part name="parameters" element="tns:RemoveUser" />
+  </wsdl:message>
+  <wsdl:message name="RemoveUserSoapOut">
+    <wsdl:part name="parameters" element="tns:RemoveUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IsUserInADSSoapIn">
+    <wsdl:part name="parameters" element="tns:IsUserInADS" />
+  </wsdl:message>
+  <wsdl:message name="IsUserInADSSoapOut">
+    <wsdl:part name="parameters" element="tns:IsUserInADSResponse" />
+  </wsdl:message>
+  <wsdl:message name="IsTokenAvailableSoapIn">
+    <wsdl:part name="parameters" element="tns:IsTokenAvailable" />
+  </wsdl:message>
+  <wsdl:message name="IsTokenAvailableSoapOut">
+    <wsdl:part name="parameters" element="tns:IsTokenAvailableResponse" />
+  </wsdl:message>
+  <wsdl:message name="ResetPasswordSoapIn">
+    <wsdl:part name="parameters" element="tns:ResetPassword" />
+  </wsdl:message>
+  <wsdl:message name="ResetPasswordSoapOut">
+    <wsdl:part name="parameters" element="tns:ResetPasswordResponse" />
+  </wsdl:message>
+  <wsdl:message name="ForgotPasswordSoapIn">
+    <wsdl:part name="parameters" element="tns:ForgotPassword" />
+  </wsdl:message>
+  <wsdl:message name="ForgotPasswordSoapOut">
+    <wsdl:part name="parameters" element="tns:ForgotPasswordResponse" />
+  </wsdl:message>
+  <wsdl:message name="EnableUserAccountSoapIn">
+    <wsdl:part name="parameters" element="tns:EnableUserAccount" />
+  </wsdl:message>
+  <wsdl:message name="EnableUserAccountSoapOut">
+    <wsdl:part name="parameters" element="tns:EnableUserAccountResponse" />
+  </wsdl:message>
+  <wsdl:message name="MoveIDTo_Location_MailGroupSoapIn">
+    <wsdl:part name="parameters" element="tns:MoveIDTo_Location_MailGroup" />
+  </wsdl:message>
+  <wsdl:message name="MoveIDTo_Location_MailGroupSoapOut">
+    <wsdl:part name="parameters" element="tns:MoveIDTo_Location_MailGroupResponse" />
+  </wsdl:message>
+  <wsdl:message name="DisableUserAccountSoapIn">
+    <wsdl:part name="parameters" element="tns:DisableUserAccount" />
+  </wsdl:message>
+  <wsdl:message name="DisableUserAccountSoapOut">
+    <wsdl:part name="parameters" element="tns:DisableUserAccountResponse" />
+  </wsdl:message>
+  <wsdl:message name="DisableUserAccount_VBRSoapIn">
+    <wsdl:part name="parameters" element="tns:DisableUserAccount_VBR" />
+  </wsdl:message>
+  <wsdl:message name="DisableUserAccount_VBRSoapOut">
+    <wsdl:part name="parameters" element="tns:DisableUserAccount_VBRResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDaysRemainingSoapIn">
+    <wsdl:part name="parameters" element="tns:GetDaysRemaining" />
+  </wsdl:message>
+  <wsdl:message name="GetDaysRemainingSoapOut">
+    <wsdl:part name="parameters" element="tns:GetDaysRemainingResponse" />
+  </wsdl:message>
+  <wsdl:message name="ResetTokenSoapIn">
+    <wsdl:part name="parameters" element="tns:ResetToken" />
+  </wsdl:message>
+  <wsdl:message name="ResetTokenSoapOut">
+    <wsdl:part name="parameters" element="tns:ResetTokenResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAccountStatusSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAccountStatus" />
+  </wsdl:message>
+  <wsdl:message name="GetAccountStatusSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAccountStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetEmailAddrSoapIn">
+    <wsdl:part name="parameters" element="tns:GetEmailAddr" />
+  </wsdl:message>
+  <wsdl:message name="GetEmailAddrSoapOut">
+    <wsdl:part name="parameters" element="tns:GetEmailAddrResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetTokenSoapIn">
+    <wsdl:part name="parameters" element="tns:SetToken" />
+  </wsdl:message>
+  <wsdl:message name="SetTokenSoapOut">
+    <wsdl:part name="parameters" element="tns:SetTokenResponse" />
+  </wsdl:message>
+  <wsdl:message name="ModifyTokenSoapIn">
+    <wsdl:part name="parameters" element="tns:ModifyToken" />
+  </wsdl:message>
+  <wsdl:message name="ModifyTokenSoapOut">
+    <wsdl:part name="parameters" element="tns:ModifyTokenResponse" />
+  </wsdl:message>
+  <wsdl:message name="CheckForAccountLockSoapIn">
+    <wsdl:part name="parameters" element="tns:CheckForAccountLock" />
+  </wsdl:message>
+  <wsdl:message name="CheckForAccountLockSoapOut">
+    <wsdl:part name="parameters" element="tns:CheckForAccountLockResponse" />
+  </wsdl:message>
+  <wsdl:message name="UnLockSoapIn">
+    <wsdl:part name="parameters" element="tns:UnLock" />
+  </wsdl:message>
+  <wsdl:message name="UnLockSoapOut">
+    <wsdl:part name="parameters" element="tns:UnLockResponse" />
+  </wsdl:message>
+  <wsdl:message name="IsUserAvailableSoapIn">
+    <wsdl:part name="parameters" element="tns:IsUserAvailable" />
+  </wsdl:message>
+  <wsdl:message name="IsUserAvailableSoapOut">
+    <wsdl:part name="parameters" element="tns:IsUserAvailableResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllUsersToResetTokenSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllUsersToResetToken" />
+  </wsdl:message>
+  <wsdl:message name="GetAllUsersToResetTokenSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllUsersToResetTokenResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetUserForNameSoapIn">
+    <wsdl:part name="parameters" element="tns:GetUserForName" />
+  </wsdl:message>
+  <wsdl:message name="GetUserForNameSoapOut">
+    <wsdl:part name="parameters" element="tns:GetUserForNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="IsUserIdinVBRSoapIn">
+    <wsdl:part name="parameters" element="tns:IsUserIdinVBR" />
+  </wsdl:message>
+  <wsdl:message name="IsUserIdinVBRSoapOut">
+    <wsdl:part name="parameters" element="tns:IsUserIdinVBRResponse" />
+  </wsdl:message>
+  <wsdl:message name="IsUserIdinDASoapIn">
+    <wsdl:part name="parameters" element="tns:IsUserIdinDA" />
+  </wsdl:message>
+  <wsdl:message name="IsUserIdinDASoapOut">
+    <wsdl:part name="parameters" element="tns:IsUserIdinDAResponse" />
+  </wsdl:message>
+  <wsdl:message name="IsInRoleSoapIn">
+    <wsdl:part name="parameters" element="tns:IsInRole" />
+  </wsdl:message>
+  <wsdl:message name="IsInRoleSoapOut">
+    <wsdl:part name="parameters" element="tns:IsInRoleResponse" />
+  </wsdl:message>
+  <wsdl:message name="getUserInSecurityGroupSoapIn">
+    <wsdl:part name="parameters" element="tns:getUserInSecurityGroup" />
+  </wsdl:message>
+  <wsdl:message name="getUserInSecurityGroupSoapOut">
+    <wsdl:part name="parameters" element="tns:getUserInSecurityGroupResponse" />
+  </wsdl:message>
+  <wsdl:portType name="StationHAuthenticationSoap">
+    <wsdl:operation name="IsValidUser">
+      <wsdl:input message="tns:IsValidUserSoapIn" />
+      <wsdl:output message="tns:IsValidUserSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateUser">
+      <wsdl:input message="tns:CreateUserSoapIn" />
+      <wsdl:output message="tns:CreateUserSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUserDetails_WithStatus">
+      <wsdl:input message="tns:UpdateUserDetails_WithStatusSoapIn" />
+      <wsdl:output message="tns:UpdateUserDetails_WithStatusSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUserDetails">
+      <wsdl:input message="tns:UpdateUserDetailsSoapIn" />
+      <wsdl:output message="tns:UpdateUserDetailsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserForId">
+      <wsdl:input message="tns:GetUserForIdSoapIn" />
+      <wsdl:output message="tns:GetUserForIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckPswdPolicy">
+      <wsdl:input message="tns:CheckPswdPolicySoapIn" />
+      <wsdl:output message="tns:CheckPswdPolicySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangePassword">
+      <wsdl:input message="tns:ChangePasswordSoapIn" />
+      <wsdl:output message="tns:ChangePasswordSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveUser">
+      <wsdl:input message="tns:RemoveUserSoapIn" />
+      <wsdl:output message="tns:RemoveUserSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IsUserInADS">
+      <wsdl:input message="tns:IsUserInADSSoapIn" />
+      <wsdl:output message="tns:IsUserInADSSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IsTokenAvailable">
+      <wsdl:input message="tns:IsTokenAvailableSoapIn" />
+      <wsdl:output message="tns:IsTokenAvailableSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ResetPassword">
+      <wsdl:input message="tns:ResetPasswordSoapIn" />
+      <wsdl:output message="tns:ResetPasswordSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ForgotPassword">
+      <wsdl:input message="tns:ForgotPasswordSoapIn" />
+      <wsdl:output message="tns:ForgotPasswordSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EnableUserAccount">
+      <wsdl:input message="tns:EnableUserAccountSoapIn" />
+      <wsdl:output message="tns:EnableUserAccountSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="MoveIDTo_Location_MailGroup">
+      <wsdl:input message="tns:MoveIDTo_Location_MailGroupSoapIn" />
+      <wsdl:output message="tns:MoveIDTo_Location_MailGroupSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DisableUserAccount">
+      <wsdl:input message="tns:DisableUserAccountSoapIn" />
+      <wsdl:output message="tns:DisableUserAccountSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DisableUserAccount_VBR">
+      <wsdl:input message="tns:DisableUserAccount_VBRSoapIn" />
+      <wsdl:output message="tns:DisableUserAccount_VBRSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDaysRemaining">
+      <wsdl:input message="tns:GetDaysRemainingSoapIn" />
+      <wsdl:output message="tns:GetDaysRemainingSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ResetToken">
+      <wsdl:input message="tns:ResetTokenSoapIn" />
+      <wsdl:output message="tns:ResetTokenSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAccountStatus">
+      <wsdl:input message="tns:GetAccountStatusSoapIn" />
+      <wsdl:output message="tns:GetAccountStatusSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEmailAddr">
+      <wsdl:input message="tns:GetEmailAddrSoapIn" />
+      <wsdl:output message="tns:GetEmailAddrSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetToken">
+      <wsdl:input message="tns:SetTokenSoapIn" />
+      <wsdl:output message="tns:SetTokenSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ModifyToken">
+      <wsdl:input message="tns:ModifyTokenSoapIn" />
+      <wsdl:output message="tns:ModifyTokenSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckForAccountLock">
+      <wsdl:input message="tns:CheckForAccountLockSoapIn" />
+      <wsdl:output message="tns:CheckForAccountLockSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UnLock">
+      <wsdl:input message="tns:UnLockSoapIn" />
+      <wsdl:output message="tns:UnLockSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IsUserAvailable">
+      <wsdl:input message="tns:IsUserAvailableSoapIn" />
+      <wsdl:output message="tns:IsUserAvailableSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllUsersToResetToken">
+      <wsdl:input message="tns:GetAllUsersToResetTokenSoapIn" />
+      <wsdl:output message="tns:GetAllUsersToResetTokenSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserForName">
+      <wsdl:input message="tns:GetUserForNameSoapIn" />
+      <wsdl:output message="tns:GetUserForNameSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IsUserIdinVBR">
+      <wsdl:input message="tns:IsUserIdinVBRSoapIn" />
+      <wsdl:output message="tns:IsUserIdinVBRSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IsUserIdinDA">
+      <wsdl:input message="tns:IsUserIdinDASoapIn" />
+      <wsdl:output message="tns:IsUserIdinDASoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IsInRole">
+      <wsdl:input message="tns:IsInRoleSoapIn" />
+      <wsdl:output message="tns:IsInRoleSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getUserInSecurityGroup">
+      <wsdl:input message="tns:getUserInSecurityGroupSoapIn" />
+      <wsdl:output message="tns:getUserInSecurityGroupSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="StationHAuthenticationSoap" type="tns:StationHAuthenticationSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="IsValidUser">
+      <soap:operation soapAction="http://tempuri.org/IsValidUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateUser">
+      <soap:operation soapAction="http://tempuri.org/CreateUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUserDetails_WithStatus">
+      <soap:operation soapAction="http://tempuri.org/UpdateUserDetails_WithStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUserDetails">
+      <soap:operation soapAction="http://tempuri.org/UpdateUserDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserForId">
+      <soap:operation soapAction="http://tempuri.org/GetUserForId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckPswdPolicy">
+      <soap:operation soapAction="http://tempuri.org/CheckPswdPolicy" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangePassword">
+      <soap:operation soapAction="http://tempuri.org/ChangePassword" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveUser">
+      <soap:operation soapAction="http://tempuri.org/RemoveUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsUserInADS">
+      <soap:operation soapAction="http://tempuri.org/IsUserInADS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsTokenAvailable">
+      <soap:operation soapAction="http://tempuri.org/IsTokenAvailable" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ResetPassword">
+      <soap:operation soapAction="http://tempuri.org/ResetPassword" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ForgotPassword">
+      <soap:operation soapAction="http://tempuri.org/ForgotPassword" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EnableUserAccount">
+      <soap:operation soapAction="http://tempuri.org/EnableUserAccount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MoveIDTo_Location_MailGroup">
+      <soap:operation soapAction="http://tempuri.org/MoveIDTo_Location_MailGroup" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DisableUserAccount">
+      <soap:operation soapAction="http://tempuri.org/DisableUserAccount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DisableUserAccount_VBR">
+      <soap:operation soapAction="http://tempuri.org/DisableUserAccount_VBR" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDaysRemaining">
+      <soap:operation soapAction="http://tempuri.org/GetDaysRemaining" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ResetToken">
+      <soap:operation soapAction="http://tempuri.org/ResetToken" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAccountStatus">
+      <soap:operation soapAction="http://tempuri.org/GetAccountStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEmailAddr">
+      <soap:operation soapAction="http://tempuri.org/GetEmailAddr" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetToken">
+      <soap:operation soapAction="http://tempuri.org/SetToken" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ModifyToken">
+      <soap:operation soapAction="http://tempuri.org/ModifyToken" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckForAccountLock">
+      <soap:operation soapAction="http://tempuri.org/CheckForAccountLock" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UnLock">
+      <soap:operation soapAction="http://tempuri.org/UnLock" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsUserAvailable">
+      <soap:operation soapAction="http://tempuri.org/IsUserAvailable" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllUsersToResetToken">
+      <soap:operation soapAction="http://tempuri.org/GetAllUsersToResetToken" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserForName">
+      <soap:operation soapAction="http://tempuri.org/GetUserForName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsUserIdinVBR">
+      <soap:operation soapAction="http://tempuri.org/IsUserIdinVBR" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsUserIdinDA">
+      <soap:operation soapAction="http://tempuri.org/IsUserIdinDA" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsInRole">
+      <soap:operation soapAction="http://tempuri.org/IsInRole" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getUserInSecurityGroup">
+      <soap:operation soapAction="http://tempuri.org/getUserInSecurityGroup" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="StationHAuthenticationSoap12" type="tns:StationHAuthenticationSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="IsValidUser">
+      <soap12:operation soapAction="http://tempuri.org/IsValidUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateUser">
+      <soap12:operation soapAction="http://tempuri.org/CreateUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUserDetails_WithStatus">
+      <soap12:operation soapAction="http://tempuri.org/UpdateUserDetails_WithStatus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUserDetails">
+      <soap12:operation soapAction="http://tempuri.org/UpdateUserDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserForId">
+      <soap12:operation soapAction="http://tempuri.org/GetUserForId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckPswdPolicy">
+      <soap12:operation soapAction="http://tempuri.org/CheckPswdPolicy" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangePassword">
+      <soap12:operation soapAction="http://tempuri.org/ChangePassword" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveUser">
+      <soap12:operation soapAction="http://tempuri.org/RemoveUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsUserInADS">
+      <soap12:operation soapAction="http://tempuri.org/IsUserInADS" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsTokenAvailable">
+      <soap12:operation soapAction="http://tempuri.org/IsTokenAvailable" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ResetPassword">
+      <soap12:operation soapAction="http://tempuri.org/ResetPassword" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ForgotPassword">
+      <soap12:operation soapAction="http://tempuri.org/ForgotPassword" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EnableUserAccount">
+      <soap12:operation soapAction="http://tempuri.org/EnableUserAccount" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MoveIDTo_Location_MailGroup">
+      <soap12:operation soapAction="http://tempuri.org/MoveIDTo_Location_MailGroup" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DisableUserAccount">
+      <soap12:operation soapAction="http://tempuri.org/DisableUserAccount" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DisableUserAccount_VBR">
+      <soap12:operation soapAction="http://tempuri.org/DisableUserAccount_VBR" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDaysRemaining">
+      <soap12:operation soapAction="http://tempuri.org/GetDaysRemaining" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ResetToken">
+      <soap12:operation soapAction="http://tempuri.org/ResetToken" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAccountStatus">
+      <soap12:operation soapAction="http://tempuri.org/GetAccountStatus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEmailAddr">
+      <soap12:operation soapAction="http://tempuri.org/GetEmailAddr" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetToken">
+      <soap12:operation soapAction="http://tempuri.org/SetToken" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ModifyToken">
+      <soap12:operation soapAction="http://tempuri.org/ModifyToken" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckForAccountLock">
+      <soap12:operation soapAction="http://tempuri.org/CheckForAccountLock" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UnLock">
+      <soap12:operation soapAction="http://tempuri.org/UnLock" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsUserAvailable">
+      <soap12:operation soapAction="http://tempuri.org/IsUserAvailable" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllUsersToResetToken">
+      <soap12:operation soapAction="http://tempuri.org/GetAllUsersToResetToken" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserForName">
+      <soap12:operation soapAction="http://tempuri.org/GetUserForName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsUserIdinVBR">
+      <soap12:operation soapAction="http://tempuri.org/IsUserIdinVBR" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsUserIdinDA">
+      <soap12:operation soapAction="http://tempuri.org/IsUserIdinDA" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsInRole">
+      <soap12:operation soapAction="http://tempuri.org/IsInRole" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getUserInSecurityGroup">
+      <soap12:operation soapAction="http://tempuri.org/getUserInSecurityGroup" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="StationHAuthentication">
+    <wsdl:port name="StationHAuthenticationSoap" binding="tns:StationHAuthenticationSoap">
+      <soap:address location="http://172.25.121.26/stationhAuthentication/StationHAuthentication.asmx" />
+    </wsdl:port>
+    <wsdl:port name="StationHAuthenticationSoap12" binding="tns:StationHAuthenticationSoap12">
+      <soap12:address location="http://172.25.121.26/stationhAuthentication/StationHAuthentication.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{9DAADF74-9B72-47D0-8C67-676B07C59003}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>HexFBBLL</RootNamespace>
+    <AssemblyName>HexFBBLL</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AdminBLL.cs" />
+    <Compile Include="CourseBLL.cs" />
+    <Compile Include="FeedbackBLL.cs" />
+    <Compile Include="MasterBLL.cs" />
+    <Compile Include="NominationListBLL.cs" />
+    <Compile Include="ReportBLL.cs" />
+    <Compile Include="SessionBLL.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TrainingListBLL.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\HexFBDALFactory\HexFBDALFactory.csproj">
+      <Project>{D2372355-480E-4A20-AF4A-13B0CB93D885}</Project>
+      <Name>HexFBDALFactory</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HexFBDAL\HexFBDAL.csproj">
+      <Project>{9C6C7F98-4F1C-49EA-AC40-65D91F95C19A}</Project>
+      <Name>HexFBDAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HexFBDBUtility\HexFBDBUtility.csproj">
+      <Project>{95C8B8E9-7F1D-4A5C-8841-1216ACB56D4C}</Project>
+      <Name>HexFBDBUtility</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HexFBIDAL\HexFBIDAL.csproj">
+      <Project>{551AC73A-10FD-428A-ADEC-D1B2D44189F5}</Project>
+      <Name>HexFBIDAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HexFBModule\HexFBModule.csproj">
+      <Project>{098654AF-7C8F-4B84-89DF-ACDFD2D77084}</Project>
+      <Name>HexFBModule</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

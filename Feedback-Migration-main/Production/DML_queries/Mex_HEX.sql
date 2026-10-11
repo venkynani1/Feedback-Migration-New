@@ -1,0 +1,60 @@
+
+ 
+
+ 
+ 
+ insert into dbo.Session_Trainer 
+(SessionID,TrainerID)
+values
+('Mex_HEX_Mex_018_12/18/2017To12/18/2017','VIVEKANANDAN NACHIMUTHU(22083)')
+
+
+   insert into C_Session Values 
+('HEX_Mex_018','Mex_HEX_Mex_018_12/18/2017To12/18/2017',
+'2017-12-18','2017-12-18','500','','Mexico','35196',
+'2017-12-21 00:00:00.000',NULL,NULL,0,0,'Information Security')
+
+
+
+INSERT INTO Nomination_List
+ VALUES
+ ('HEX_Mex_018','Mex_HEX_Mex_018_12/18/2017To12/18/2017','39578','35196','2017-12-21 00:00:00.000',NULL,NULL,0,0),
+ ('HEX_Mex_018','Mex_HEX_Mex_018_12/18/2017To12/18/2017','39725','35196','2017-12-21 00:00:00.000',NULL,NULL,0,0),
+ ('HEX_Mex_018','Mex_HEX_Mex_018_12/18/2017To12/18/2017','39726','35196','2017-12-21 00:00:00.000',NULL,NULL,0,0),
+   
+  ('HEX_Mex_018','Mex_HEX_Mex_018_12/18/2017To12/18/2017','39727','35196','2017-12-21 00:00:00.000',NULL,NULL,0,0),
+  ('HEX_Mex_018','Mex_HEX_Mex_018_12/18/2017To12/18/2017','39728','35196','2017-12-21 00:00:00.000',NULL,NULL,0,0),
+  ('HEX_Mex_018','Mex_HEX_Mex_018_12/18/2017To12/18/2017','39729','35196','2017-12-21 00:00:00.000',NULL,NULL,0,0)
+  
+  
+  
+  
+  Insert into Feedback 
+  values 
+  ('HEX_Mex_018','Mex_HEX_Mex_018_12/18/2017To12/18/2017','','21','5','VIVEKANANDAN NACHIMUTHU(22083)',0,0,0,0,0,'12/21/2017',1,1),
+  ('HEX_Mex_018','Mex_HEX_Mex_018_12/18/2017To12/18/2017','','22','5','VIVEKANANDAN NACHIMUTHU(22083)',0,0,0,0,0,'12/21/2017',1,1),
+  ('HEX_Mex_018','Mex_HEX_Mex_018_12/18/2017To12/18/2017','','23','5','VIVEKANANDAN NACHIMUTHU(22083)',0,0,0,0,0,'12/21/2017',1,1),
+  
+  ('HEX_Mex_018','Mex_HEX_Mex_018_12/18/2017To12/18/2017','39725','23','5','VIVEKANANDAN NACHIMUTHU(22083)',0,0,0,0,0,'12/22/2017',1,1),
+  ('HEX_Mex_018','Mex_HEX_Mex_018_12/18/2017To12/18/2017','39725','23','5','VIVEKANANDAN NACHIMUTHU(22083)',0,0,0,0,0,'12/22/2017',1,1),
+  ('HEX_Mex_018','Mex_HEX_Mex_018_12/18/2017To12/18/2017','39725','23','5','VIVEKANANDAN NACHIMUTHU(22083)',0,0,0,0,0,'12/22/2017',1,1)
+  
+  
+  
+  
+INSERT INTO Feedback_Comments 
+
+VALUES
+('Mex_HEX_Mex_018_12/18/2017To12/18/2017','VIVEKANANDAN NACHIMUTHU(22083)','','Good training.','1','2017-12-21 23:53:06.607',1),
+('Mex_HEX_Mex_018_12/18/2017To12/18/2017','VIVEKANANDAN NACHIMUTHU(22083)','39725','Vivek has shown to have a lot of experience and knowledge about Information security. Their ideas were very well transmitted and all subject well explained and clear. Thanks.','1','2017-12-22 20:54:14.940',1)
+
+ 
+ 
+
+ 
+
+
+
+  
+
+

@@ -1,0 +1,1 @@
+ update Feedback_supervisor set status ='0' where Supervisor_ID ='32092'

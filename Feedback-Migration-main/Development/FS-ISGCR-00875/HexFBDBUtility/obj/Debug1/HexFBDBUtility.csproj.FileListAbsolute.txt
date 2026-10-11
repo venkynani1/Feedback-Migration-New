@@ -1,0 +1,12 @@
+E:\HexFeedBack\HexFBDBUtility\bin\Debug\HexFBDBUtility.dll
+E:\HexFeedBack\HexFBDBUtility\bin\Debug\HexFBDBUtility.pdb
+E:\HexFeedBack\HexFBDBUtility\obj\Debug\ResolveAssemblyReference.cache
+E:\HexFeedBack\HexFBDBUtility\obj\Debug\HexFBDBUtility.dll
+E:\HexFeedBack\HexFBDBUtility\obj\Debug\HexFBDBUtility.pdb
+D:\HexFeedBack\HexFBDBUtility\bin\Debug\HexFBDBUtility.dll
+D:\HexFeedBack\HexFBDBUtility\bin\Debug\HexFBDBUtility.pdb
+D:\HexFeedBack\HexFBDBUtility\obj\Debug\ResolveAssemblyReference.cache
+D:\HexFeedBack\HexFBDBUtility\obj\Debug\HexFBDBUtility.dll
+D:\HexFeedBack\HexFBDBUtility\obj\Debug\HexFBDBUtility.pdb
+D:\HexFeedBack\HexFBDBUtility\bin\Debug\HexFBModule.dll
+D:\HexFeedBack\HexFBDBUtility\bin\Debug\HexFBModule.pdb

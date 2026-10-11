@@ -1,3 +1,5 @@
 {
-    "git.ignoreLimitWarning": true
+    "git.ignoreLimitWarning": true,
+    "dotnet.preferCSharpExtension": true,
+    "dotnet.defaultSolution": "Development/FS-ISGCR-00875/HexFeedback/HexFeedback.sln"
 }

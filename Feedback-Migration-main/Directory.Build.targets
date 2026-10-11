@@ -1,0 +1,12 @@
+<Project>
+  <!-- Visual Studio 2022 no longer ships the .NET Framework 4.0 targeting pack.
+       When it is not installed, fall back to the reference assemblies from the
+       Microsoft.NETFramework.ReferenceAssemblies.net40 NuGet package. -->
+  <PropertyGroup>
+    <Net40ReferenceAssembliesPath>$(UserProfile)\.nuget\packages\microsoft.netframework.referenceassemblies.net40\1.0.3\build</Net40ReferenceAssembliesPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(TargetFrameworkVersion)' == 'v4.0' And !Exists('$(MSBuildProgramFiles32)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\mscorlib.dll') And Exists('$(Net40ReferenceAssembliesPath)\.NETFramework\v4.0\mscorlib.dll')">
+    <TargetFrameworkRootPath>$(Net40ReferenceAssembliesPath)</TargetFrameworkRootPath>
+    <FrameworkPathOverride>$(Net40ReferenceAssembliesPath)\.NETFramework\v4.0</FrameworkPathOverride>
+  </PropertyGroup>
+</Project>

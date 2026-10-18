@@ -15,6 +15,32 @@ export interface Grid {
   rows: unknown[][];
 }
 
+// Every answer from the server renews the session cookie, so the idle clock
+// restarts with each request. Tabs share the time so one busy tab keeps the
+// others from warning.
+const ACTIVITY_KEY = "feedback.activity";
+let lastActivity = Date.now();
+
+function touch() {
+  lastActivity = Date.now();
+  try {
+    localStorage.setItem(ACTIVITY_KEY, String(lastActivity));
+  } catch {
+    // storage unavailable: this tab still keeps its own time
+  }
+}
+
+/** When the server last renewed the session, in any tab. */
+export function lastServerActivity(): number {
+  let shared = 0;
+  try {
+    shared = Number(localStorage.getItem(ACTIVITY_KEY)) || 0;
+  } catch {
+    // storage unavailable
+  }
+  return Math.max(lastActivity, shared);
+}
+
 function url(path: string, params?: Params): string {
   const query = new URLSearchParams();
   for (const [key, value] of Object.entries(params ?? {})) {
@@ -55,6 +81,7 @@ async function send<T>(method: string, path: string, params?: Params, body?: unk
     credentials: "same-origin",
   });
   if (!response.ok) throw await failure(response);
+  touch();
   return (await response.json()) as T;
 }
 
@@ -67,6 +94,7 @@ export const api = {
   async download(path: string, params: Params, fallbackName: string): Promise<void> {
     const response = await fetch(url(path, params), { credentials: "same-origin" });
     if (!response.ok) throw await failure(response);
+    touch();
     const named = /filename="?([^";]+)"?/.exec(response.headers.get("Content-Disposition") ?? "");
     const link = document.createElement("a");
     link.href = URL.createObjectURL(await response.blob());

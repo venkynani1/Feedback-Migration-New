@@ -72,12 +72,13 @@ def _me(user: User) -> dict:
 
 @router.get("/config")
 def config() -> dict:
-    """Tells the login page whether this is a demo with sample data."""
-    if not get_settings().demo_mode:
-        return {"demo": False, "logins": []}
+    """Tells the pages whether this is a demo with sample data, and how long an idle session lasts."""
+    settings = get_settings()
+    if not settings.demo_mode:
+        return {"demo": False, "logins": [], "sessionMinutes": settings.session_minutes}
     from .. import demo
 
-    return {"demo": True, "logins": demo.login_hints()}
+    return {"demo": True, "logins": demo.login_hints(), "sessionMinutes": settings.session_minutes}
 
 
 @router.post("/login")

@@ -98,7 +98,8 @@ that has the same database rights as the old IIS application pool.
 - `FEEDBACK_ENVIRONMENT=production` with a fresh `FEEDBACK_SECRET_KEY`; the
   application then checks the other safety settings itself at start-up.
 - Set `FEEDBACK_LOG_FILE` so errors are kept once it runs as a service, and
-  point the proxy's health check at `/api/health`.
+  point the proxy's health check at `/api/health`. A monitor that should also
+  notice a lost database connection can use `/api/health/ready`.
 - Run a single worker process, or accept that the failed sign-in lock
   (5 attempts, then 15 minutes) is counted per process.
 - Check on the production database that these procedures exist. The
@@ -118,10 +119,43 @@ that has the same database rights as the old IIS application pool.
 
 ## Tests
 
+Back end (a stand-in replaces the database):
+
 ```powershell
 cd backend
 .venv\Scripts\python -m pytest
 ```
+
+Browser tests (Playwright, in the installed Chrome). They build the front end,
+start the back end in demo mode on port 8001 and go through each role: sign
+in, every admin page, recording feedback, sorting, the theme switch and the
+idle-session warning. They need the back end's `.venv` from the step above.
+
+```powershell
+cd frontend
+npm run test:e2e
+```
+
+Both run on every push through `.github/workflows/ci.yml` at the repository
+root. Neither touches the real database, StationH or mail, so they do not
+replace the walk-through against the real environment below.
+
+## Health checks
+
+| URL | Answers |
+|---|---|
+| `/api/health` | 200 while the application is running (for the proxy) |
+| `/api/health/ready` | 200 when the database also answers `SELECT 1`, otherwise 503. The reason is written to the log, not returned |
+
+## Idle sessions
+
+A session ends after `FEEDBACK_SESSION_MINUTES` (default 30) without a
+request. Two minutes before that the page warns and offers to stay signed in;
+when the time runs out it signs out, says why on the sign-in page, and after
+signing in again returns to the page the user was on. Feedback being written
+on the Record My Feedback form is kept in that browser tab (session storage,
+per employee and session) and restored, so a timeout or a reload loses nothing;
+it is removed once submitted or closed.
 
 ## Old page to new page
 

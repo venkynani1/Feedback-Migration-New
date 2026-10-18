@@ -8,6 +8,7 @@ from fastapi.responses import FileResponse, JSONResponse
 from fastapi.staticfiles import StaticFiles
 from starlette.middleware.sessions import SessionMiddleware
 
+from . import db
 from .config import get_settings
 from .routers import auth, feedback, lookups, masters, nominations, reports, sessions, skillport
 
@@ -27,6 +28,16 @@ PAGE_CSP = (
     "frame-ancestors 'none'; base-uri 'self'; form-action 'self'"
 )
 API_CSP = "default-src 'none'; frame-ancestors 'none'"
+
+
+class ImmutableStaticFiles(StaticFiles):
+    """Built assets carry a content hash in their name, so they never change and can be cached for good."""
+
+    async def get_response(self, path, scope):
+        response = await super().get_response(path, scope)
+        if response.status_code == 200:
+            response.headers["Cache-Control"] = "public, max-age=31536000, immutable"
+        return response
 
 
 def _log_to_file(path: str) -> None:
@@ -96,7 +107,7 @@ def create_app() -> FastAPI:
     async def unhandled(request: Request, exc: Exception):
         log.exception("Unhandled error on %s %s", request.method, request.url.path)
         return JSONResponse(
-            {"detail": "An unexpected error occured. Please contact system administrator."},
+            {"detail": "An unexpected error occurred. Please contact the system administrator."},
             status_code=500,
         )
 
@@ -105,12 +116,22 @@ def create_app() -> FastAPI:
         """For the proxy or a monitor: answers when the application is up."""
         return {"status": "ok"}
 
+    @app.get("/api/health/ready", include_in_schema=False)
+    def ready():
+        """For a monitor: also checks that the database answers. The reason stays in the log."""
+        try:
+            db.ping()
+        except Exception:
+            log.exception("Readiness check: database unreachable")
+            return JSONResponse({"status": "unavailable", "database": "unreachable"}, status_code=503)
+        return {"status": "ok", "database": "ok"}
+
     for module in (auth, lookups, masters, sessions, nominations, feedback, reports, skillport):
         app.include_router(module.router)
 
     dist = settings.frontend_dist
     if dist.is_dir():
-        app.mount("/assets", StaticFiles(directory=dist / "assets"), name="assets")
+        app.mount("/assets", ImmutableStaticFiles(directory=dist / "assets"), name="assets")
 
         @app.get("/{path:path}", include_in_schema=False)
         def spa(path: str):
@@ -119,7 +140,9 @@ def create_app() -> FastAPI:
             candidate = (dist / path).resolve()
             if path and candidate.is_file() and dist.resolve() in candidate.parents:
                 return FileResponse(candidate)
-            return FileResponse(dist / "index.html")
+            # The page names the current build's hashed assets, so browsers must
+            # check for a new copy or they keep showing the previous release.
+            return FileResponse(dist / "index.html", headers={"Cache-Control": "no-cache"})
 
     return app
 

@@ -1,20 +1,22 @@
 import { useEffect, useState } from "react";
 import { Link, useNavigate, useSearchParams } from "react-router-dom";
 import { api, field } from "../api";
+import { useAuth } from "../auth";
 import { useDialogs } from "../components/Dialog";
+import { Icon } from "../components/Icon";
 import { Card, fail, Field, Loading, Notice, ok, Page, Select, useLoad, type Message } from "../components/ui";
 
 type Row = Record<string, unknown>;
 
 const PENDING_NOTE =
-  "Note:Only those trainings which are not yet closed and feedback pending by you will be shown below.";
+  "There are no open training sessions awaiting your feedback.";
 
 function link(path: string, values: Record<string, string>): string {
   return `${path}?${new URLSearchParams(values)}`;
 }
 
 function TrainingTable({ rows, action, to }: { rows: Row[]; action: string; to: string }) {
-  if (rows.length === 0) return <p className="muted">{PENDING_NOTE}</p>;
+  if (rows.length === 0) return <div className="empty"><Icon name="check" size={26} /><strong>You’re all caught up</strong><p>{PENDING_NOTE}</p></div>;
   return (
     <div className="table-wrap">
       <table>
@@ -67,6 +69,11 @@ export function MyFeedback() {
       {loading && !data && <Loading />}
       {data && (
         <>
+          <div className="feedback-overview" aria-label="Your pending work">
+            <div><span className="tile-icon"><Icon name="edit" /></span><div><strong>{data.trainings.length}</strong><span>Sessions awaiting feedback</span></div></div>
+            <div><span className="tile-icon"><Icon name="users" /></span><div><strong>{data.supervisor.length}</strong><span>Sessions awaiting your ratings</span></div></div>
+            <div><span className="tile-icon"><Icon name="check" /></span><div><strong>{data.reviews.length}</strong><span>Reviews awaiting approval</span></div></div>
+          </div>
           <Card title="Record My Feedback">
             <TrainingTable rows={data.trainings} action="Record My Feedback" to="/feedback/record" />
           </Card>
@@ -75,9 +82,7 @@ export function MyFeedback() {
           </Card>
           <Card title="Training Effectiveness - Review Feedback">
             {data.reviews.length === 0 ? (
-              <p className="muted">
-                Note:Only those Reviews which are pending for your approval will be shown below.
-              </p>
+              <div className="empty"><Icon name="check" size={26} /><strong>No reviews pending</strong><p>Reviews will appear here when they need your approval.</p></div>
             ) : (
               <div className="table-wrap">
                 <table>
@@ -205,6 +210,33 @@ interface FeedbackContext extends Header {
   firstFeedback: boolean;
 }
 
+/** Answers not yet submitted. Kept in this tab only, so they survive a reload or a timed-out session. */
+interface Draft {
+  trainer: string;
+  administration: number | null;
+  design: number | null;
+  delivery: number | null;
+  comments: string;
+}
+
+function readDraft(key: string): Draft | null {
+  try {
+    const text = sessionStorage.getItem(key);
+    return text ? (JSON.parse(text) as Draft) : null;
+  } catch {
+    return null;
+  }
+}
+
+function writeDraft(key: string, draft: Draft | null) {
+  try {
+    if (draft) sessionStorage.setItem(key, JSON.stringify(draft));
+    else sessionStorage.removeItem(key);
+  } catch {
+    // storage unavailable: nothing is kept, the form still works
+  }
+}
+
 export function FeedbackForm() {
   const [query] = useSearchParams();
   const navigate = useNavigate();
@@ -228,13 +260,31 @@ export function FeedbackForm() {
   const [checked, setChecked] = useState(false);
   const [busy, setBusy] = useState(false);
   const [message, setMessage] = useState<Message | null>(null);
+  const { user } = useAuth();
+  const draftKey = `feedback.draft.${user?.empId}.${sessionId}.${courseId}`;
+  const [restored, setRestored] = useState(false);
 
   useEffect(() => {
-    if (context.data) {
-      setTrainers(context.data.trainers);
-      setFirst(context.data.firstFeedback);
+    if (!context.data) return;
+    setTrainers(context.data.trainers);
+    setFirst(context.data.firstFeedback);
+    const draft = readDraft(draftKey);
+    if (draft && context.data.trainers.includes(draft.trainer)) {
+      setTrainer(draft.trainer);
+      setAdministration(draft.administration);
+      setDesign(draft.design);
+      setDelivery(draft.delivery);
+      setComments(draft.comments);
+      setMessage({ kind: "info", text: "Your unsubmitted answers have been restored." });
     }
-  }, [context.data]);
+    setRestored(true);
+  }, [context.data, draftKey]);
+
+  useEffect(() => {
+    if (!restored) return;
+    const empty = !trainer && !comments && administration === null && design === null && delivery === null;
+    writeDraft(draftKey, empty ? null : { trainer, administration, design, delivery, comments });
+  }, [restored, draftKey, trainer, administration, design, delivery, comments]);
 
   const last = trainers.length <= 1;
 
@@ -260,6 +310,7 @@ export function FeedbackForm() {
         comments,
       });
       if (result.remainingTrainers.length === 0) {
+        writeDraft(draftKey, null);
         navigate("/feedback");
         return;
       }
@@ -317,7 +368,7 @@ export function FeedbackForm() {
               disabled={!trainer}
               missing={checked && delivery === null}
             />
-            <Field label="Overall Comments" hint={`${MAX_COMMENT - comments.length} Character remaining.`}>
+            <Field label="Overall Comments" hint={`${MAX_COMMENT - comments.length} characters remaining.`}>
               <textarea
                 rows={4}
                 maxLength={MAX_COMMENT}
@@ -333,9 +384,11 @@ export function FeedbackForm() {
               <button
                 className="button button-quiet"
                 type="button"
-                onClick={async () =>
-                  (await dialogs.confirm("Are you sure to close?", { confirmLabel: "Close" })) && navigate("/feedback")
-                }
+                onClick={async () => {
+                  if (!(await dialogs.confirm("Are you sure to close?", { confirmLabel: "Close" }))) return;
+                  writeDraft(draftKey, null);
+                  navigate("/feedback");
+                }}
               >
                 Close
               </button>

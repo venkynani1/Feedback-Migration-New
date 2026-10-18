@@ -105,6 +105,17 @@ def _connect():
     )
 
 
+def ping() -> None:
+    """Connect and run a trivial query; raises when the database cannot be reached."""
+    if get_settings().demo_mode:
+        return
+    connection = _connect()
+    try:
+        connection.cursor().execute("SELECT 1").fetchone()
+    finally:
+        connection.close()
+
+
 def _check(name: str) -> str:
     if not _IDENTIFIER.match(name):
         raise ValueError(f"invalid SQL identifier: {name!r}")

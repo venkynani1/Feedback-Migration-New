@@ -146,7 +146,7 @@ export function DefaultersReport() {
   );
   return (
     <Page title="Feedback Defaulters">
-      <Card title="View FeedBack Defaulters">
+      <Card title="View Feedback Defaulters">
         <div className="form form-inline">
           <SessionPicker value={selection} onChange={setSelection} />
         </div>

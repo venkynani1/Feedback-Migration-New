@@ -55,6 +55,25 @@ const SHAPES = {
     </>
   ),
   chevron: <path d="m9 6 6 6-6 6" />,
+  sun: (
+    <>
+      <circle cx="12" cy="12" r="4" />
+      <path d="M12 2.5v2M12 19.5v2M4.6 4.6 6 6M18 18l1.4 1.4M2.5 12h2M19.5 12h2M4.6 19.4 6 18M18 6l1.4-1.4" />
+    </>
+  ),
+  moon: <path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z" />,
+  eye: (
+    <>
+      <path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z" />
+      <circle cx="12" cy="12" r="3" />
+    </>
+  ),
+  eyeOff: (
+    <path d="m3 3 18 18M10.6 5.1Q11.3 5 12 5c6.5 0 10 7 10 7a17 17 0 0 1-3.2 4.1M6.6 6.6C3.9 8.3 2 12 2 12s3.5 7 10 7a9.7 9.7 0 0 0 5.4-1.6M9.9 9.9a3 3 0 0 0 4.2 4.2" />
+  ),
+  sort: <path d="m8 9 4-4 4 4M8 15l4 4 4-4" />,
+  sortUp: <path d="m7 14 5-5 5 5" />,
+  sortDown: <path d="m7 10 5 5 5-5" />,
   inbox: <path d="m3 13 3-8h12l3 8v6H3zM3 13h5l1 3h6l1-3h5" />,
 } satisfies Record<string, ReactNode>;
 

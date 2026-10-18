@@ -85,7 +85,7 @@ export function ExcelUpload() {
 
   const remove = () =>
     run(async () => {
-      const sure = await dialogs.confirm("Do you want to delete ther records?", { confirmLabel: "Delete", danger: true });
+      const sure = await dialogs.confirm("Do you want to delete these records?", { confirmLabel: "Delete", danger: true });
       if (!sure) return;
       const result = await api.post<{ message: string }>("/api/skillport/delete", {
         uploadType,

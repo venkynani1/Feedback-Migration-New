@@ -1,20 +1,40 @@
+import { lazy, type ComponentType } from "react";
 import { Navigate, Outlet, Route, Routes, useLocation } from "react-router-dom";
 import { useAuth } from "./auth";
 import { Layout } from "./components/Layout";
 import { Loading } from "./components/ui";
-import { FeedbackForm, MyFeedback, ReviewFeedback, SupervisorFeedback } from "./pages/Feedback";
-import { Home } from "./pages/Home";
 import { Login } from "./pages/Login";
-import { CourseMaster, EmployeeSearch, MailMaster, TrainerMaster, VendorMaster } from "./pages/Masters";
-import {
-  CommentsReport,
-  DefaultersReport,
-  EffectivenessReport,
-  IndividualReport,
-  OverallReport,
-} from "./pages/Reports";
-import { NewSession, ParticipantList } from "./pages/Sessions";
-import { ExcelUpload, LearningReport } from "./pages/Upload";
+
+/** Load a page's code the first time it is opened, so sign-in does not wait for every screen. */
+function page<M>(load: () => Promise<M>, name: keyof M) {
+  return lazy(() => load().then((module) => ({ default: module[name] as ComponentType })));
+}
+
+const feedback = () => import("./pages/Feedback");
+const masters = () => import("./pages/Masters");
+const reports = () => import("./pages/Reports");
+const sessions = () => import("./pages/Sessions");
+const upload = () => import("./pages/Upload");
+
+const Home = page(() => import("./pages/Home"), "Home");
+const MyFeedback = page(feedback, "MyFeedback");
+const FeedbackForm = page(feedback, "FeedbackForm");
+const SupervisorFeedback = page(feedback, "SupervisorFeedback");
+const ReviewFeedback = page(feedback, "ReviewFeedback");
+const MailMaster = page(masters, "MailMaster");
+const VendorMaster = page(masters, "VendorMaster");
+const TrainerMaster = page(masters, "TrainerMaster");
+const CourseMaster = page(masters, "CourseMaster");
+const EmployeeSearch = page(masters, "EmployeeSearch");
+const NewSession = page(sessions, "NewSession");
+const ParticipantList = page(sessions, "ParticipantList");
+const CommentsReport = page(reports, "CommentsReport");
+const DefaultersReport = page(reports, "DefaultersReport");
+const OverallReport = page(reports, "OverallReport");
+const IndividualReport = page(reports, "IndividualReport");
+const EffectivenessReport = page(reports, "EffectivenessReport");
+const ExcelUpload = page(upload, "ExcelUpload");
+const LearningReport = page(upload, "LearningReport");
 
 function SignedIn() {
   const { user, loading } = useAuth();

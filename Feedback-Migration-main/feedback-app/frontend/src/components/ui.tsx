@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useMemo, useState, type ReactNode } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState, type ReactNode } from "react";
 import { useLocation } from "react-router-dom";
 import { errorText, type Grid } from "../api";
 import { findNav } from "../nav";
@@ -40,9 +40,34 @@ interface PageProps {
   children: ReactNode;
 }
 
+let headingFocusPending = false;
+
+/** After navigation, move focus to the next page's heading once it is on screen. */
+export function requestHeadingFocus(container: HTMLElement | null) {
+  const heading = container?.querySelector<HTMLElement>("h1");
+  if (heading) focusHeading(heading);
+  else headingFocusPending = true; // the page's code is still loading
+}
+
+function focusHeading(heading: HTMLElement) {
+  headingFocusPending = false;
+  heading.tabIndex = -1;
+  heading.focus({ preventScroll: true });
+}
+
+/** For a page heading: takes the focus when it appears after a navigation. */
+export function useHeadingFocus() {
+  const heading = useRef<HTMLHeadingElement>(null);
+  useEffect(() => {
+    if (headingFocusPending && heading.current) focusHeading(heading.current);
+  }, []);
+  return heading;
+}
+
 export function Page({ title, description, children }: PageProps) {
   const { pathname } = useLocation();
   const nav = findNav(pathname);
+  const heading = useHeadingFocus();
   useEffect(() => {
     document.title = `${title} - Training Feedback`;
   }, [title]);
@@ -64,7 +89,9 @@ export function Page({ title, description, children }: PageProps) {
             ))}
           </ol>
         )}
-        <h1>{title}</h1>
+        <h1 ref={heading} tabIndex={-1}>
+          {title}
+        </h1>
         {summary && <p className="page-description">{summary}</p>}
       </header>
       {children}
@@ -154,6 +181,15 @@ function cell(value: unknown): string {
 
 const PAGE_SIZES = [25, 50, 100];
 const FILTER_FROM_ROWS = 10;
+const collator = new Intl.Collator(undefined, { numeric: true, sensitivity: "base" });
+
+type Sort = { index: number; dir: "asc" | "desc" } | null;
+
+/** Unsorted, then ascending, then descending, then back to unsorted. */
+function nextSort(sort: Sort, index: number): Sort {
+  if (sort?.index !== index) return { index, dir: "asc" };
+  return sort.dir === "asc" ? { index, dir: "desc" } : null;
+}
 
 interface DataGridProps {
   grid: Grid | null;
@@ -167,6 +203,7 @@ export function DataGrid({ grid, show, serial, empty = "No records to display." 
   const [filter, setFilter] = useState("");
   const [pageSize, setPageSize] = useState(PAGE_SIZES[0]);
   const [page, setPage] = useState(0);
+  const [sort, setSort] = useState<Sort>(null);
 
   const picked = useMemo(() => {
     if (!grid) return [];
@@ -179,12 +216,17 @@ export function DataGrid({ grid, show, serial, empty = "No records to display." 
   }, [grid, show]);
 
   const rows = useMemo(() => {
+    if (!grid) return [];
     const wanted = filter.trim().toLowerCase();
-    if (!grid || !wanted) return grid?.rows ?? [];
-    return grid.rows.filter((row) => picked.some((c) => cell(row[c.index]).toLowerCase().includes(wanted)));
-  }, [grid, picked, filter]);
+    const matching = wanted
+      ? grid.rows.filter((row) => picked.some((c) => cell(row[c.index]).toLowerCase().includes(wanted)))
+      : grid.rows;
+    if (!sort) return matching;
+    const sign = sort.dir === "asc" ? 1 : -1;
+    return [...matching].sort((a, b) => sign * collator.compare(cell(a[sort.index]), cell(b[sort.index])));
+  }, [grid, picked, filter, sort]);
 
-  useEffect(() => setPage(0), [grid, filter, pageSize]);
+  useEffect(() => setPage(0), [grid, filter, pageSize, sort]);
 
   if (!grid) return null;
   if (grid.rows.length === 0) {
@@ -221,9 +263,17 @@ export function DataGrid({ grid, show, serial, empty = "No records to display." 
           <thead>
             <tr>
               {serial && <th className="col-serial">S.No</th>}
-              {picked.map((c) => (
-                <th key={c.index}>{c.heading}</th>
-              ))}
+              {picked.map((c) => {
+                const dir = sort?.index === c.index ? sort.dir : null;
+                return (
+                  <th key={c.index} aria-sort={dir ? (dir === "asc" ? "ascending" : "descending") : undefined}>
+                    <button type="button" className="th-sort" onClick={() => setSort(nextSort(sort, c.index))}>
+                      {c.heading}
+                      <Icon name={dir === "asc" ? "sortUp" : dir === "desc" ? "sortDown" : "sort"} size={14} />
+                    </button>
+                  </th>
+                );
+              })}
             </tr>
           </thead>
           <tbody>

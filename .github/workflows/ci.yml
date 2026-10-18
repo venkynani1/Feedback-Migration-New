@@ -1,0 +1,48 @@
+# Runs the back-end tests and the browser tests on every push and pull request.
+# Both use stand-ins (a fake database and demo mode), so no database, StationH
+# or mail access is needed. Windows matches the production server.
+name: CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  test:
+    runs-on: windows-latest
+    timeout-minutes: 20
+    env:
+      APP: Feedback-Migration-main/feedback-app
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+          cache-dependency-path: Feedback-Migration-main/feedback-app/frontend/package-lock.json
+
+      - name: Back-end tests
+        working-directory: ${{ env.APP }}/backend
+        run: |
+          python -m venv .venv
+          .venv\Scripts\python -m pip install --quiet -r requirements-dev.txt
+          .venv\Scripts\python -m pytest -q
+
+      - name: Build and browser tests
+        working-directory: ${{ env.APP }}/frontend
+        run: |
+          npm ci
+          npm run test:e2e
+
+      - name: Keep the browser test report
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-report
+          path: ${{ env.APP }}/frontend/playwright-report
+          retention-days: 14

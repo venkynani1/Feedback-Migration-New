@@ -25,7 +25,7 @@ def test_database_failure_gives_a_generic_error(monkeypatch):
     client = TestClient(create_app(), raise_server_exceptions=False, headers={"X-Requested-With": "XMLHttpRequest"})
     response = client.post("/api/auth/login", json={"username": "a", "password": "b"})
     assert response.status_code == 500
-    assert "contact system administrator" in response.json()["detail"]
+    assert "contact the system administrator" in response.json()["detail"]
 
 
 def test_responses_carry_security_headers(tmp_path, monkeypatch):

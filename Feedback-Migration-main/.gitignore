@@ -1,0 +1,10 @@
+# Locally installed Claude Code skills and personal Claude settings; never committed
+.claude/skills/
+.claude/settings.local.json
+# .NET build output of the legacy projects (already-tracked files are unaffected)
+obj/
+# Browser test output
+test-results/
+playwright-report/
+# Its working files (inspector screenshots and reports)
+.taste-skill/

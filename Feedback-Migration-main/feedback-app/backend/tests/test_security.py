@@ -68,3 +68,21 @@ def test_production_hides_api_pages_but_answers_health(monkeypatch, tmp_path):
     assert client.get("/api/docs").status_code == 404
     assert client.get("/api/openapi.json").status_code == 404
     assert client.get("/api/health").json() == {"status": "ok"}
+
+
+def test_readiness_reports_the_database(client, monkeypatch):
+    monkeypatch.setattr(db, "ping", lambda: None)
+    assert client.get("/api/health/ready").json() == {"status": "ok", "database": "ok"}
+
+    def unreachable():
+        raise RuntimeError("login timeout on cch1wdsthstg")
+
+    monkeypatch.setattr(db, "ping", unreachable)
+    response = client.get("/api/health/ready")
+    assert response.status_code == 503
+    # The server name and error stay in the log, not in the public answer.
+    assert "cch1wdsthstg" not in response.text
+
+
+def test_login_page_is_told_the_idle_timeout(client):
+    assert client.get("/api/auth/config").json()["sessionMinutes"] == get_settings().session_minutes
